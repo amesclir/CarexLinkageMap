@@ -1,0 +1,34 @@
+---
+title: "CarexLinkageMap"
+author: "amesclir"
+date: "05/05/2015"
+output: html_document
+---
+
+First, we load the package onemap and import the data set
+
+```{r}
+
+library (onemap)
+
+f2.onemap <- read.mapmaker(file = "onemap.f2.txt")
+
+```
+
+Second, we assign markers to linkage groups
+
+```{r}
+twopts <- rf.2pts(f2.onemap, LOD=3, max.rf=0.5)
+mark.all <- make.seq(twopts, "all")
+LGs.f2.6.0.5 <- group(mark.all, LOD = 6, max.rf = 0.5)
+LGs.f2.6.0.5 
+```
+
+Third, we get the genetic mapping of linkage groups
+
+```{r}
+set.map.fun(type="kosambi")
+
+
+```
+
