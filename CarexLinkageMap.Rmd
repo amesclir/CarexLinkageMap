@@ -680,8 +680,7 @@ LG13.1000 <- cbind(LG13,LG13MATRIX1000)
 for (i in 5:1004) LG13.1000[,i] <- sample(x2.all, 28, replace = FALSE, prob = NULL)
 
 LG31CIsup <- vector()
-for (i in 1:9) LG31CIsup[i] <- quantile(as.numeric(LG31.1000[i,4:1003]), 0.95)
-LG31$CIsup <- LG31CIsup
+LG31$CIsup <- 5.991
 LG31$CIinf <- 0
 
 library(ggplot2)
@@ -697,8 +696,7 @@ p31 <- ggplot(LG31, aes(POSITION))+
 p31
 
 LG17CIsup <- vector()
-for (i in 1:90) LG17CIsup[i] <- quantile(as.numeric(LG17.1000[i,4:1003]), 0.95)
-LG17$CIsup <- LG17CIsup
+LG17$CIsup <- 5.991
 LG17$CIinf <- 0
 
 p17 <- ggplot(LG17, aes(POSITION))+
@@ -713,8 +711,7 @@ p17 <- ggplot(LG17, aes(POSITION))+
 p17
 
 LG13CIsup <- vector()
-for (i in 1:28) LG13CIsup[i] <- quantile(as.numeric(LG13.1000[i,4:1003]), 0.95)
-LG13$CIsup <- LG13CIsup
+LG13$CIsup <- 5.991
 LG13$CIinf <- 0
 
 p13 <- ggplot(LG13, aes(POSITION))+
