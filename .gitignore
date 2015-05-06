@@ -17,3 +17,4 @@ vignettes/*.pdf
 .csv
 .txt
 .f2.txt
+.RData
