@@ -726,6 +726,11 @@ p13 <- ggplot(LG13, aes(POSITION))+
 p13
 
 
+library(adehabitat)
+wawotest(as.numeric(LG31$CHISQUARE > 5.991))
+wawotest(as.numeric(LG17$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+
 ```
 
 
