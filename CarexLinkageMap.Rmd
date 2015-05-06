@@ -396,7 +396,7 @@ draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
 
 This is our final map!
 
-Now we are going to look for markers with a higher number than markers under segregation distortion that what would be expected by chance.
+Now we are going to look for linkage groups with a higher number than markers under segregation distortion that what would be expected by chance.
 But first we will check wether or not there is a correlation between missing data and segregation distortion.
 
 ```{r}
@@ -644,7 +644,7 @@ abline(v=2,col="red")
 
 Linkage groups 13, 17 and 31 have more markers under segregation distortion that expected by chance
 
-Now we are going to check whether or not those markers under segregation distortion are gouped together within the linkage groups.
+Now we are going to check whether or not those markers under segregation distortion are grouped together within the linkage groups.
 
 And first, we will check again whether or not for these specific linkage groups there is any king of correlation between missing data and segregation distortion.
 
