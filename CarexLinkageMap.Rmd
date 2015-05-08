@@ -733,4 +733,43 @@ wawotest(as.numeric(LG13$CHISQUARE > 5.991))
 
 ```
 
+Now we are going to repeat the last analysis for LG17 and LG13 but excluding the loci that are not safely located
+
+```{r}
+LG17red <- read.csv(file = "LG17.red.csv")
+LG17red$CIsup <- 5.991
+LG17red$CIinf <- 0
+
+p17red <- ggplot(LG17red, aes(POSITION))+
+  geom_line(data=subset(LG17red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG17red),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG17red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p17red
+
+LG13red <- read.csv(file = "LG13.red.csv")
+LG13red$CIsup <- 5.991
+LG13red$CIinf <- 0
+
+p13red <- ggplot(LG13red, aes(POSITION))+
+  geom_line(data=subset(LG13red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG13red),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG13red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p13red
+
+
+library(adehabitat)
+wawotest(as.numeric(LG17red$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+
+```
 
