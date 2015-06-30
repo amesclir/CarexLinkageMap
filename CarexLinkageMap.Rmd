@@ -406,7 +406,7 @@ mydata
 x2 <- mydata[,2]
 missingdata <- mydata[,3]
 summary(lm(x2 ~ missingdata))
-plot(x2 ~ missingdata, main="Correlation between segregation distortion (X-square) and missing data", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 
 
 LG1 <- matrix(0, nrow=1000, ncol = 24)
@@ -497,7 +497,7 @@ LG13 <- matrix(0, nrow=1000, ncol = 28)
 for (j in 1:1000) LG13[j,] <- sample(x2, 28, replace = FALSE, prob = NULL)
 histLG13 <- vector()
 for (i in 1:1000) histLG13[i] <- length(LG13[i,][LG13[i,]>5.991])
-hist(histLG13, xlim=c(0,16))
+hist(histLG13, xlim=c(0,16), main = "")
 abline(v=15,col="red")
 
 LG14 <- matrix(0, nrow=1000, ncol = 42)
@@ -532,7 +532,7 @@ LG17 <- matrix(0, nrow=1000, ncol = 90)
 for (j in 1:1000) LG17[j,] <- sample(x2, 90, replace = FALSE, prob = NULL)
 histLG17 <- vector()
 for (i in 1:1000) histLG17[i] <- length(LG17[i,][LG17[i,]>5.991])
-hist(histLG17, xlim=c(5,46))
+hist(histLG17, xlim=c(5,46), main = "")
 abline(v=45,col="red")
 
 LG18 <- matrix(0, nrow=1000, ncol = 71)
@@ -630,7 +630,7 @@ LG31 <- matrix(0, nrow=1000, ncol = 9)
 for (j in 1:1000) LG31[j,] <- sample(x2, 9, replace = FALSE, prob = NULL)
 histLG31 <- vector()
 for (i in 1:1000) histLG31[i] <- length(LG31[i,][LG31[i,]>5.991])
-hist(histLG31, xlim = c(-1,10))
+hist(histLG31, xlim = c(-1,10), main = "")
 abline(v=8,col="red")
 
 LG32 <- matrix(0, nrow=1000, ncol = 5)
@@ -656,7 +656,7 @@ LG31 <- read.csv(file = "LG31.csv")
 x2 <- LG31[,3]
 missingdata <- LG31[,4]
 summary(lm(x2 ~ missingdata))
-plot(x2 ~ missingdata, main="Correlation between segregation distortion (X-square) and missing data in LG31", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 LG31MATRIX1000 <- matrix(0,9,1000)
 LG31.1000 <- cbind(LG31,LG31MATRIX1000)
 for (i in 5:1004) LG31.1000[,i] <- sample(x2.all, 9, replace = FALSE, prob = NULL)
@@ -665,7 +665,7 @@ LG17 <- read.csv(file = "LG17.csv")
 x2 <- LG17[,3]
 missingdata <- LG17[,4]
 summary(lm(x2 ~ missingdata))
-plot(x2 ~ missingdata, main="Correlation between segregation distortion (X-square) and missing data in LG17", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 LG17MATRIX1000 <- matrix(0,90,1000)
 LG17.1000 <- cbind(LG17,LG17MATRIX1000)
 for (i in 5:1004) LG17.1000[,i] <- sample(x2.all, 90, replace = FALSE, prob = NULL)
@@ -674,7 +674,7 @@ LG13 <- read.csv(file = "LG13.csv")
 x2 <- LG13[,3]
 missingdata <- LG13[,4]
 summary(lm(x2 ~ missingdata))
-plot(x2 ~ missingdata, main="Correlation between segregation distortion (X-square) and missing data in LG13", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 LG13MATRIX1000 <- matrix(0,28,1000)
 LG13.1000 <- cbind(LG13,LG13MATRIX1000)
 for (i in 5:1004) LG13.1000[,i] <- sample(x2.all, 28, replace = FALSE, prob = NULL)
