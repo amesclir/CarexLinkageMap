@@ -19,7 +19,7 @@ Second, we assign markers to linkage groups
 
 ```{r}
 twopts <- rf.2pts(f2.onemap, LOD=3, max.rf=0.5)
-mark.all <- make.seq(twopts, "all")
+mark.all <- make_seq(twopts, "all")
 LGs.f2.6.0.5 <- group(mark.all, LOD = 6, max.rf = 0.5)
 LGs.f2.6.0.5 
 ```
@@ -29,74 +29,74 @@ Third, we get the genetic mapping of linkage groups
 ```{r}
 set.map.fun(type="kosambi")
 
-LG.f2.6.0.5.1 <- make.seq(LGs.f2.6.0.5, 1)
-LG.f2.6.0.5.2 <- make.seq(LGs.f2.6.0.5, 2)
-LG.f2.6.0.5.3 <- make.seq(LGs.f2.6.0.5, 3)
-LG.f2.6.0.5.4 <- make.seq(LGs.f2.6.0.5, 4)
-LG.f2.6.0.5.5 <- make.seq(LGs.f2.6.0.5, 5)
-LG.f2.6.0.5.6 <- make.seq(LGs.f2.6.0.5, 6)
-LG.f2.6.0.5.7 <- make.seq(LGs.f2.6.0.5, 7)
-LG.f2.6.0.5.8 <- make.seq(LGs.f2.6.0.5, 8)
-LG.f2.6.0.5.9 <- make.seq(LGs.f2.6.0.5, 9)
-LG.f2.6.0.5.10 <- make.seq(LGs.f2.6.0.5, 10)
-LG.f2.6.0.5.11 <- make.seq(LGs.f2.6.0.5, 11)
-LG.f2.6.0.5.12 <- make.seq(LGs.f2.6.0.5, 12)
-LG.f2.6.0.5.13 <- make.seq(LGs.f2.6.0.5, 13)
-LG.f2.6.0.5.14 <- make.seq(LGs.f2.6.0.5, 14)
-LG.f2.6.0.5.15 <- make.seq(LGs.f2.6.0.5, 15)
-LG.f2.6.0.5.16 <- make.seq(LGs.f2.6.0.5, 16)
-LG.f2.6.0.5.17 <- make.seq(LGs.f2.6.0.5, 17)
-LG.f2.6.0.5.18 <- make.seq(LGs.f2.6.0.5, 18)
-LG.f2.6.0.5.19 <- make.seq(LGs.f2.6.0.5, 19)
-LG.f2.6.0.5.20 <- make.seq(LGs.f2.6.0.5, 20)
-LG.f2.6.0.5.21 <- make.seq(LGs.f2.6.0.5, 21)
-LG.f2.6.0.5.22 <- make.seq(LGs.f2.6.0.5, 22)
-LG.f2.6.0.5.23 <- make.seq(LGs.f2.6.0.5, 23)
-LG.f2.6.0.5.24 <- make.seq(LGs.f2.6.0.5, 24)
-LG.f2.6.0.5.25 <- make.seq(LGs.f2.6.0.5, 25)
-LG.f2.6.0.5.26 <- make.seq(LGs.f2.6.0.5, 26)
-LG.f2.6.0.5.27 <- make.seq(LGs.f2.6.0.5, 27)
-LG.f2.6.0.5.28 <- make.seq(LGs.f2.6.0.5, 28)
-LG.f2.6.0.5.29 <- make.seq(LGs.f2.6.0.5, 29)
-LG.f2.6.0.5.30 <- make.seq(LGs.f2.6.0.5, 30)
-LG.f2.6.0.5.31 <- make.seq(LGs.f2.6.0.5, 31)
-LG.f2.6.0.5.32 <- make.seq(LGs.f2.6.0.5, 32)
+LG.f2.6.0.5.1 <- make_seq(LGs.f2.6.0.5, 1)
+LG.f2.6.0.5.2 <- make_seq(LGs.f2.6.0.5, 2)
+LG.f2.6.0.5.3 <- make_seq(LGs.f2.6.0.5, 3)
+LG.f2.6.0.5.4 <- make_seq(LGs.f2.6.0.5, 4)
+LG.f2.6.0.5.5 <- make_seq(LGs.f2.6.0.5, 5)
+LG.f2.6.0.5.6 <- make_seq(LGs.f2.6.0.5, 6)
+LG.f2.6.0.5.7 <- make_seq(LGs.f2.6.0.5, 7)
+LG.f2.6.0.5.8 <- make_seq(LGs.f2.6.0.5, 8)
+LG.f2.6.0.5.9 <- make_seq(LGs.f2.6.0.5, 9)
+LG.f2.6.0.5.10 <- make_seq(LGs.f2.6.0.5, 10)
+LG.f2.6.0.5.11 <- make_seq(LGs.f2.6.0.5, 11)
+LG.f2.6.0.5.12 <- make_seq(LGs.f2.6.0.5, 12)
+LG.f2.6.0.5.13 <- make_seq(LGs.f2.6.0.5, 13)
+LG.f2.6.0.5.14 <- make_seq(LGs.f2.6.0.5, 14)
+LG.f2.6.0.5.15 <- make_seq(LGs.f2.6.0.5, 15)
+LG.f2.6.0.5.16 <- make_seq(LGs.f2.6.0.5, 16)
+LG.f2.6.0.5.17 <- make_seq(LGs.f2.6.0.5, 17)
+LG.f2.6.0.5.18 <- make_seq(LGs.f2.6.0.5, 18)
+LG.f2.6.0.5.19 <- make_seq(LGs.f2.6.0.5, 19)
+LG.f2.6.0.5.20 <- make_seq(LGs.f2.6.0.5, 20)
+LG.f2.6.0.5.21 <- make_seq(LGs.f2.6.0.5, 21)
+LG.f2.6.0.5.22 <- make_seq(LGs.f2.6.0.5, 22)
+LG.f2.6.0.5.23 <- make_seq(LGs.f2.6.0.5, 23)
+LG.f2.6.0.5.24 <- make_seq(LGs.f2.6.0.5, 24)
+LG.f2.6.0.5.25 <- make_seq(LGs.f2.6.0.5, 25)
+LG.f2.6.0.5.26 <- make_seq(LGs.f2.6.0.5, 26)
+LG.f2.6.0.5.27 <- make_seq(LGs.f2.6.0.5, 27)
+LG.f2.6.0.5.28 <- make_seq(LGs.f2.6.0.5, 28)
+LG.f2.6.0.5.29 <- make_seq(LGs.f2.6.0.5, 29)
+LG.f2.6.0.5.30 <- make_seq(LGs.f2.6.0.5, 30)
+LG.f2.6.0.5.31 <- make_seq(LGs.f2.6.0.5, 31)
+LG.f2.6.0.5.32 <- make_seq(LGs.f2.6.0.5, 32)
 
 
 
 
-LG.f2.6.0.5.1.ord <- order.seq(LG.f2.6.0.5.1, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.2.ord <- order.seq(LG.f2.6.0.5.2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.3.ord <- order.seq(LG.f2.6.0.5.3, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.4.ord <- order.seq(LG.f2.6.0.5.4, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.5.ord <- order.seq(LG.f2.6.0.5.5, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.6.ord <- order.seq(LG.f2.6.0.5.6, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.7.ord <- order.seq(LG.f2.6.0.5.7, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.8.ord <- order.seq(LG.f2.6.0.5.8, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.9.ord <- order.seq(LG.f2.6.0.5.9, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.10.ord <- order.seq(LG.f2.6.0.5.10, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.11.ord <- order.seq(LG.f2.6.0.5.11, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.12.ord <- order.seq(LG.f2.6.0.5.12, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.13.ord <- order.seq(LG.f2.6.0.5.13, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.14.ord <- order.seq(LG.f2.6.0.5.14, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.15.ord <- order.seq(LG.f2.6.0.5.15, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.16.ord <- order.seq(LG.f2.6.0.5.16, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.17.ord <- order.seq(LG.f2.6.0.5.17, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.18.ord <- order.seq(LG.f2.6.0.5.18, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.19.ord <- order.seq(LG.f2.6.0.5.19, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.20.ord <- order.seq(LG.f2.6.0.5.20, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.21.ord <- order.seq(LG.f2.6.0.5.21, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.22.ord <- order.seq(LG.f2.6.0.5.22, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.23.ord <- order.seq(LG.f2.6.0.5.23, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.24.ord <- order.seq(LG.f2.6.0.5.24, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.25.ord <- order.seq(LG.f2.6.0.5.25, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.26.ord <- order.seq(LG.f2.6.0.5.26, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.27.ord <- order.seq(LG.f2.6.0.5.27, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.28.ord <- order.seq(LG.f2.6.0.5.28, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.29.ord <- order.seq(LG.f2.6.0.5.29, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.30.ord <- order.seq(LG.f2.6.0.5.30, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.31.ord <- order.seq(LG.f2.6.0.5.31, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
-LG.f2.6.0.5.32.ord <- order.seq(LG.f2.6.0.5.32, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3, draw.try=FALSE, wait=0)
+LG.f2.6.0.5.1.ord <- order_seq(LG.f2.6.0.5.1, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.2.ord <- order_seq(LG.f2.6.0.5.2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.3.ord <- order_seq(LG.f2.6.0.5.3, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.4.ord <- order_seq(LG.f2.6.0.5.4, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.5.ord <- order_seq(LG.f2.6.0.5.5, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.6.ord <- order_seq(LG.f2.6.0.5.6, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.7.ord <- order_seq(LG.f2.6.0.5.7, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.8.ord <- order_seq(LG.f2.6.0.5.8, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.9.ord <- order_seq(LG.f2.6.0.5.9, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.10.ord <- order_seq(LG.f2.6.0.5.10, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.11.ord <- order_seq(LG.f2.6.0.5.11, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.12.ord <- order_seq(LG.f2.6.0.5.12, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.13.ord <- order_seq(LG.f2.6.0.5.13, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.14.ord <- order_seq(LG.f2.6.0.5.14, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.15.ord <- order_seq(LG.f2.6.0.5.15, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.16.ord <- order_seq(LG.f2.6.0.5.16, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.17.ord <- order_seq(LG.f2.6.0.5.17, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.18.ord <- order_seq(LG.f2.6.0.5.18, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.19.ord <- order_seq(LG.f2.6.0.5.19, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.20.ord <- order_seq(LG.f2.6.0.5.20, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.21.ord <- order_seq(LG.f2.6.0.5.21, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.22.ord <- order_seq(LG.f2.6.0.5.22, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.23.ord <- order_seq(LG.f2.6.0.5.23, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.24.ord <- order_seq(LG.f2.6.0.5.24, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.25.ord <- order_seq(LG.f2.6.0.5.25, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.26.ord <- order_seq(LG.f2.6.0.5.26, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.27.ord <- order_seq(LG.f2.6.0.5.27, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.28.ord <- order_seq(LG.f2.6.0.5.28, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.29.ord <- order_seq(LG.f2.6.0.5.29, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.30.ord <- order_seq(LG.f2.6.0.5.30, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.31.ord <- order_seq(LG.f2.6.0.5.31, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.32.ord <- order_seq(LG.f2.6.0.5.32, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
 
 
 ```
@@ -104,71 +104,71 @@ LG.f2.6.0.5.32.ord <- order.seq(LG.f2.6.0.5.32, n.init=5, subset.search = "twopt
 Now, we order the markers, all of them and only the safe ones
 
 ```{r}
-LG.f2.6.0.5.1.ord.safe <- make.seq(LG.f2.6.0.5.1.ord,"safe")
-LG.f2.6.0.5.2.ord.safe <- make.seq(LG.f2.6.0.5.2.ord,"safe")
-LG.f2.6.0.5.3.ord.safe <- make.seq(LG.f2.6.0.5.3.ord,"safe")
-LG.f2.6.0.5.4.ord.safe <- make.seq(LG.f2.6.0.5.4.ord,"safe")
-LG.f2.6.0.5.5.ord.safe <- make.seq(LG.f2.6.0.5.5.ord,"safe")
-LG.f2.6.0.5.6.ord.safe <- make.seq(LG.f2.6.0.5.6.ord,"safe")
-LG.f2.6.0.5.7.ord.safe <- make.seq(LG.f2.6.0.5.7.ord,"safe")
-LG.f2.6.0.5.8.ord.safe <- make.seq(LG.f2.6.0.5.8.ord,"safe")
-LG.f2.6.0.5.9.ord.safe <- make.seq(LG.f2.6.0.5.9.ord,"safe")
-LG.f2.6.0.5.10.ord.safe <- make.seq(LG.f2.6.0.5.10.ord,"safe")
-LG.f2.6.0.5.11.ord.safe <- make.seq(LG.f2.6.0.5.11.ord,"safe")
-LG.f2.6.0.5.12.ord.safe <- make.seq(LG.f2.6.0.5.12.ord,"safe")
-LG.f2.6.0.5.13.ord.safe <- make.seq(LG.f2.6.0.5.13.ord,"safe")
-LG.f2.6.0.5.14.ord.safe <- make.seq(LG.f2.6.0.5.14.ord,"safe")
-LG.f2.6.0.5.15.ord.safe <- make.seq(LG.f2.6.0.5.15.ord,"safe")
-LG.f2.6.0.5.16.ord.safe <- make.seq(LG.f2.6.0.5.16.ord,"safe")
-LG.f2.6.0.5.17.ord.safe <- make.seq(LG.f2.6.0.5.17.ord,"safe")
-LG.f2.6.0.5.18.ord.safe <- make.seq(LG.f2.6.0.5.18.ord,"safe")
-LG.f2.6.0.5.19.ord.safe <- make.seq(LG.f2.6.0.5.19.ord,"safe")
-LG.f2.6.0.5.20.ord.safe <- make.seq(LG.f2.6.0.5.20.ord,"safe")
-LG.f2.6.0.5.21.ord.safe <- make.seq(LG.f2.6.0.5.21.ord,"safe")
-LG.f2.6.0.5.22.ord.safe <- make.seq(LG.f2.6.0.5.22.ord,"safe")
-LG.f2.6.0.5.23.ord.safe <- make.seq(LG.f2.6.0.5.23.ord,"safe")
-LG.f2.6.0.5.24.ord.safe <- make.seq(LG.f2.6.0.5.24.ord,"safe")
-LG.f2.6.0.5.25.ord.safe <- make.seq(LG.f2.6.0.5.25.ord,"safe")
-LG.f2.6.0.5.26.ord.safe <- make.seq(LG.f2.6.0.5.26.ord,"safe")
-LG.f2.6.0.5.27.ord.safe <- make.seq(LG.f2.6.0.5.27.ord,"safe")
-LG.f2.6.0.5.28.ord.safe <- make.seq(LG.f2.6.0.5.28.ord,"safe")
-LG.f2.6.0.5.29.ord.safe <- make.seq(LG.f2.6.0.5.29.ord,"safe")
-LG.f2.6.0.5.30.ord.safe <- make.seq(LG.f2.6.0.5.30.ord,"safe")
-LG.f2.6.0.5.31.ord.safe <- make.seq(LG.f2.6.0.5.31.ord,"safe")
-LG.f2.6.0.5.32.ord.safe <- make.seq(LG.f2.6.0.5.32.ord,"safe")
+LG.f2.6.0.5.1.ord.safe <- make_seq(LG.f2.6.0.5.1.ord,"safe")
+LG.f2.6.0.5.2.ord.safe <- make_seq(LG.f2.6.0.5.2.ord,"safe")
+LG.f2.6.0.5.3.ord.safe <- make_seq(LG.f2.6.0.5.3.ord,"safe")
+LG.f2.6.0.5.4.ord.safe <- make_seq(LG.f2.6.0.5.4.ord,"safe")
+LG.f2.6.0.5.5.ord.safe <- make_seq(LG.f2.6.0.5.5.ord,"safe")
+LG.f2.6.0.5.6.ord.safe <- make_seq(LG.f2.6.0.5.6.ord,"safe")
+LG.f2.6.0.5.7.ord.safe <- make_seq(LG.f2.6.0.5.7.ord,"safe")
+LG.f2.6.0.5.8.ord.safe <- make_seq(LG.f2.6.0.5.8.ord,"safe")
+LG.f2.6.0.5.9.ord.safe <- make_seq(LG.f2.6.0.5.9.ord,"safe")
+LG.f2.6.0.5.10.ord.safe <- make_seq(LG.f2.6.0.5.10.ord,"safe")
+LG.f2.6.0.5.11.ord.safe <- make_seq(LG.f2.6.0.5.11.ord,"safe")
+LG.f2.6.0.5.12.ord.safe <- make_seq(LG.f2.6.0.5.12.ord,"safe")
+LG.f2.6.0.5.13.ord.safe <- make_seq(LG.f2.6.0.5.13.ord,"safe")
+LG.f2.6.0.5.14.ord.safe <- make_seq(LG.f2.6.0.5.14.ord,"safe")
+LG.f2.6.0.5.15.ord.safe <- make_seq(LG.f2.6.0.5.15.ord,"safe")
+LG.f2.6.0.5.16.ord.safe <- make_seq(LG.f2.6.0.5.16.ord,"safe")
+LG.f2.6.0.5.17.ord.safe <- make_seq(LG.f2.6.0.5.17.ord,"safe")
+LG.f2.6.0.5.18.ord.safe <- make_seq(LG.f2.6.0.5.18.ord,"safe")
+LG.f2.6.0.5.19.ord.safe <- make_seq(LG.f2.6.0.5.19.ord,"safe")
+LG.f2.6.0.5.20.ord.safe <- make_seq(LG.f2.6.0.5.20.ord,"safe")
+LG.f2.6.0.5.21.ord.safe <- make_seq(LG.f2.6.0.5.21.ord,"safe")
+LG.f2.6.0.5.22.ord.safe <- make_seq(LG.f2.6.0.5.22.ord,"safe")
+LG.f2.6.0.5.23.ord.safe <- make_seq(LG.f2.6.0.5.23.ord,"safe")
+LG.f2.6.0.5.24.ord.safe <- make_seq(LG.f2.6.0.5.24.ord,"safe")
+LG.f2.6.0.5.25.ord.safe <- make_seq(LG.f2.6.0.5.25.ord,"safe")
+LG.f2.6.0.5.26.ord.safe <- make_seq(LG.f2.6.0.5.26.ord,"safe")
+LG.f2.6.0.5.27.ord.safe <- make_seq(LG.f2.6.0.5.27.ord,"safe")
+LG.f2.6.0.5.28.ord.safe <- make_seq(LG.f2.6.0.5.28.ord,"safe")
+LG.f2.6.0.5.29.ord.safe <- make_seq(LG.f2.6.0.5.29.ord,"safe")
+LG.f2.6.0.5.30.ord.safe <- make_seq(LG.f2.6.0.5.30.ord,"safe")
+LG.f2.6.0.5.31.ord.safe <- make_seq(LG.f2.6.0.5.31.ord,"safe")
+LG.f2.6.0.5.32.ord.safe <- make_seq(LG.f2.6.0.5.32.ord,"safe")
 
-LG.f2.6.0.5.1.ord.all <- make.seq(LG.f2.6.0.5.1.ord,"force")
-LG.f2.6.0.5.2.ord.all <- make.seq(LG.f2.6.0.5.2.ord,"force")
-LG.f2.6.0.5.3.ord.all <- make.seq(LG.f2.6.0.5.3.ord,"force")
-LG.f2.6.0.5.4.ord.all <- make.seq(LG.f2.6.0.5.4.ord,"force")
-LG.f2.6.0.5.5.ord.all <- make.seq(LG.f2.6.0.5.5.ord,"force")
-LG.f2.6.0.5.6.ord.all <- make.seq(LG.f2.6.0.5.6.ord,"force")
-LG.f2.6.0.5.7.ord.all <- make.seq(LG.f2.6.0.5.7.ord,"force")
-LG.f2.6.0.5.8.ord.all <- make.seq(LG.f2.6.0.5.8.ord,"force")
-LG.f2.6.0.5.9.ord.all <- make.seq(LG.f2.6.0.5.9.ord,"force")
-LG.f2.6.0.5.10.ord.all <- make.seq(LG.f2.6.0.5.10.ord,"force")
-LG.f2.6.0.5.11.ord.all <- make.seq(LG.f2.6.0.5.11.ord,"force")
-LG.f2.6.0.5.12.ord.all <- make.seq(LG.f2.6.0.5.12.ord,"force")
-LG.f2.6.0.5.13.ord.all <- make.seq(LG.f2.6.0.5.13.ord,"force")
-LG.f2.6.0.5.14.ord.all <- make.seq(LG.f2.6.0.5.14.ord,"force")
-LG.f2.6.0.5.15.ord.all <- make.seq(LG.f2.6.0.5.15.ord,"force")
-LG.f2.6.0.5.16.ord.all <- make.seq(LG.f2.6.0.5.16.ord,"force")
-LG.f2.6.0.5.17.ord.all <- make.seq(LG.f2.6.0.5.17.ord,"force")
-LG.f2.6.0.5.18.ord.all <- make.seq(LG.f2.6.0.5.18.ord,"force")
-LG.f2.6.0.5.19.ord.all <- make.seq(LG.f2.6.0.5.19.ord,"force")
-LG.f2.6.0.5.20.ord.all <- make.seq(LG.f2.6.0.5.20.ord,"force")
-LG.f2.6.0.5.21.ord.all <- make.seq(LG.f2.6.0.5.21.ord,"force")
-LG.f2.6.0.5.22.ord.all <- make.seq(LG.f2.6.0.5.22.ord,"force")
-LG.f2.6.0.5.23.ord.all <- make.seq(LG.f2.6.0.5.23.ord,"force")
-LG.f2.6.0.5.24.ord.all <- make.seq(LG.f2.6.0.5.24.ord,"force")
-LG.f2.6.0.5.25.ord.all <- make.seq(LG.f2.6.0.5.25.ord,"force")
-LG.f2.6.0.5.26.ord.all <- make.seq(LG.f2.6.0.5.26.ord,"force")
-LG.f2.6.0.5.27.ord.all <- make.seq(LG.f2.6.0.5.27.ord,"force")
-LG.f2.6.0.5.28.ord.all <- make.seq(LG.f2.6.0.5.28.ord,"force")
-LG.f2.6.0.5.29.ord.all <- make.seq(LG.f2.6.0.5.29.ord,"force")
-LG.f2.6.0.5.30.ord.all <- make.seq(LG.f2.6.0.5.30.ord,"force")
-LG.f2.6.0.5.31.ord.all <- make.seq(LG.f2.6.0.5.31.ord,"force")
-LG.f2.6.0.5.32.ord.all <- make.seq(LG.f2.6.0.5.32.ord,"force")
+LG.f2.6.0.5.1.ord.all <- make_seq(LG.f2.6.0.5.1.ord,"force")
+LG.f2.6.0.5.2.ord.all <- make_seq(LG.f2.6.0.5.2.ord,"force")
+LG.f2.6.0.5.3.ord.all <- make_seq(LG.f2.6.0.5.3.ord,"force")
+LG.f2.6.0.5.4.ord.all <- make_seq(LG.f2.6.0.5.4.ord,"force")
+LG.f2.6.0.5.5.ord.all <- make_seq(LG.f2.6.0.5.5.ord,"force")
+LG.f2.6.0.5.6.ord.all <- make_seq(LG.f2.6.0.5.6.ord,"force")
+LG.f2.6.0.5.7.ord.all <- make_seq(LG.f2.6.0.5.7.ord,"force")
+LG.f2.6.0.5.8.ord.all <- make_seq(LG.f2.6.0.5.8.ord,"force")
+LG.f2.6.0.5.9.ord.all <- make_seq(LG.f2.6.0.5.9.ord,"force")
+LG.f2.6.0.5.10.ord.all <- make_seq(LG.f2.6.0.5.10.ord,"force")
+LG.f2.6.0.5.11.ord.all <- make_seq(LG.f2.6.0.5.11.ord,"force")
+LG.f2.6.0.5.12.ord.all <- make_seq(LG.f2.6.0.5.12.ord,"force")
+LG.f2.6.0.5.13.ord.all <- make_seq(LG.f2.6.0.5.13.ord,"force")
+LG.f2.6.0.5.14.ord.all <- make_seq(LG.f2.6.0.5.14.ord,"force")
+LG.f2.6.0.5.15.ord.all <- make_seq(LG.f2.6.0.5.15.ord,"force")
+LG.f2.6.0.5.16.ord.all <- make_seq(LG.f2.6.0.5.16.ord,"force")
+LG.f2.6.0.5.17.ord.all <- make_seq(LG.f2.6.0.5.17.ord,"force")
+LG.f2.6.0.5.18.ord.all <- make_seq(LG.f2.6.0.5.18.ord,"force")
+LG.f2.6.0.5.19.ord.all <- make_seq(LG.f2.6.0.5.19.ord,"force")
+LG.f2.6.0.5.20.ord.all <- make_seq(LG.f2.6.0.5.20.ord,"force")
+LG.f2.6.0.5.21.ord.all <- make_seq(LG.f2.6.0.5.21.ord,"force")
+LG.f2.6.0.5.22.ord.all <- make_seq(LG.f2.6.0.5.22.ord,"force")
+LG.f2.6.0.5.23.ord.all <- make_seq(LG.f2.6.0.5.23.ord,"force")
+LG.f2.6.0.5.24.ord.all <- make_seq(LG.f2.6.0.5.24.ord,"force")
+LG.f2.6.0.5.25.ord.all <- make_seq(LG.f2.6.0.5.25.ord,"force")
+LG.f2.6.0.5.26.ord.all <- make_seq(LG.f2.6.0.5.26.ord,"force")
+LG.f2.6.0.5.27.ord.all <- make_seq(LG.f2.6.0.5.27.ord,"force")
+LG.f2.6.0.5.28.ord.all <- make_seq(LG.f2.6.0.5.28.ord,"force")
+LG.f2.6.0.5.29.ord.all <- make_seq(LG.f2.6.0.5.29.ord,"force")
+LG.f2.6.0.5.30.ord.all <- make_seq(LG.f2.6.0.5.30.ord,"force")
+LG.f2.6.0.5.31.ord.all <- make_seq(LG.f2.6.0.5.31.ord,"force")
+LG.f2.6.0.5.32.ord.all <- make_seq(LG.f2.6.0.5.32.ord,"force")
 
 ```
 
@@ -772,4 +772,777 @@ wawotest(as.numeric(LG17red$CHISQUARE > 5.991))
 wawotest(as.numeric(LG13$CHISQUARE > 5.991))
 
 ```
+
+
+########################################################
+We are going to repeat the process but including the 85 loci under severe segregation distortion
+
+First, we load the package onemap and import the data set
+
+```{r}
+
+library (onemap)
+
+f2.onemap.sd <- read_mapmaker(file = "onemap.f2.sd.txt")
+
+```
+
+Second, we assign markers to linkage groups
+
+```{r}
+twopts.sd <- rf_2pts(f2.onemap.sd, LOD=3, max.rf=0.5)
+mark.all.sd <- make_seq(twopts.sd, "all")
+LGs.f2.6.0.5.sd <- group(mark.all.sd, LOD = 6, max.rf = 0.5)
+LGs.f2.6.0.5.sd 
+```
+
+Third, we get the genetic mapping of linkage groups
+
+```{r}
+set_map_fun(type="kosambi")
+
+LG.f2.6.0.5.1.sd <- make_seq(LGs.f2.6.0.5.sd, 1)
+LG.f2.6.0.5.2.sd <- make_seq(LGs.f2.6.0.5.sd, 2)
+LG.f2.6.0.5.3.sd <- make_seq(LGs.f2.6.0.5.sd, 3)
+LG.f2.6.0.5.4.sd <- make_seq(LGs.f2.6.0.5.sd, 4)
+LG.f2.6.0.5.5.sd <- make_seq(LGs.f2.6.0.5.sd, 5)
+LG.f2.6.0.5.6.sd <- make_seq(LGs.f2.6.0.5.sd, 6)
+LG.f2.6.0.5.7.sd <- make_seq(LGs.f2.6.0.5.sd, 7)
+LG.f2.6.0.5.8.sd <- make_seq(LGs.f2.6.0.5.sd, 8)
+LG.f2.6.0.5.9.sd <- make_seq(LGs.f2.6.0.5.sd, 9)
+LG.f2.6.0.5.10.sd <- make_seq(LGs.f2.6.0.5.sd, 10)
+LG.f2.6.0.5.11.sd <- make_seq(LGs.f2.6.0.5.sd, 11)
+LG.f2.6.0.5.12.sd <- make_seq(LGs.f2.6.0.5.sd, 12)
+LG.f2.6.0.5.13.sd <- make_seq(LGs.f2.6.0.5.sd, 13)
+LG.f2.6.0.5.14.sd <- make_seq(LGs.f2.6.0.5.sd, 14)
+LG.f2.6.0.5.15.sd <- make_seq(LGs.f2.6.0.5.sd, 15)
+LG.f2.6.0.5.16.sd <- make_seq(LGs.f2.6.0.5.sd, 16)
+LG.f2.6.0.5.17.sd <- make_seq(LGs.f2.6.0.5.sd, 17)
+LG.f2.6.0.5.18.sd <- make_seq(LGs.f2.6.0.5.sd, 18)
+LG.f2.6.0.5.19.sd <- make_seq(LGs.f2.6.0.5.sd, 19)
+LG.f2.6.0.5.20.sd <- make_seq(LGs.f2.6.0.5.sd, 20)
+LG.f2.6.0.5.21.sd <- make_seq(LGs.f2.6.0.5.sd, 21)
+LG.f2.6.0.5.22.sd <- make_seq(LGs.f2.6.0.5.sd, 22)
+LG.f2.6.0.5.23.sd <- make_seq(LGs.f2.6.0.5.sd, 23)
+LG.f2.6.0.5.24.sd <- make_seq(LGs.f2.6.0.5.sd, 24)
+LG.f2.6.0.5.25.sd <- make_seq(LGs.f2.6.0.5.sd, 25)
+LG.f2.6.0.5.26.sd <- make_seq(LGs.f2.6.0.5.sd, 26)
+LG.f2.6.0.5.27.sd <- make_seq(LGs.f2.6.0.5.sd, 27)
+LG.f2.6.0.5.28.sd <- make_seq(LGs.f2.6.0.5.sd, 28)
+LG.f2.6.0.5.29.sd <- make_seq(LGs.f2.6.0.5.sd, 29)
+LG.f2.6.0.5.30.sd <- make_seq(LGs.f2.6.0.5.sd, 30)
+LG.f2.6.0.5.31.sd <- make_seq(LGs.f2.6.0.5.sd, 31)
+
+
+
+
+LG.f2.6.0.5.1.ord.sd <- order_seq(LG.f2.6.0.5.1.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.2.ord.sd <- order_seq(LG.f2.6.0.5.2.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.3.ord.sd <- order_seq(LG.f2.6.0.5.3.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.4.ord.sd <- order_seq(LG.f2.6.0.5.4.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.5.ord.sd <- order_seq(LG.f2.6.0.5.5.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.6.ord.sd <- order_seq(LG.f2.6.0.5.6.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.7.ord.sd <- order_seq(LG.f2.6.0.5.7.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.8.ord.sd <- order_seq(LG.f2.6.0.5.8.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.9.ord.sd <- order_seq(LG.f2.6.0.5.9.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.10.ord.sd <- order_seq(LG.f2.6.0.5.10.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.11.ord.sd <- order_seq(LG.f2.6.0.5.11.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.12.ord.sd <- order_seq(LG.f2.6.0.5.12.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.13.ord.sd <- order_seq(LG.f2.6.0.5.13.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.14.ord.sd <- order_seq(LG.f2.6.0.5.14.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.15.ord.sd <- order_seq(LG.f2.6.0.5.15.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.16.ord.sd <- order_seq(LG.f2.6.0.5.16.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.17.ord.sd <- order_seq(LG.f2.6.0.5.17.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.18.ord.sd <- order_seq(LG.f2.6.0.5.18.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.19.ord.sd <- order_seq(LG.f2.6.0.5.19.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.20.ord.sd <- order_seq(LG.f2.6.0.5.20.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.21.ord.sd <- order_seq(LG.f2.6.0.5.21.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.22.ord.sd <- order_seq(LG.f2.6.0.5.22.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.23.ord.sd <- order_seq(LG.f2.6.0.5.23.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.24.ord.sd <- order_seq(LG.f2.6.0.5.24.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.25.ord.sd <- order_seq(LG.f2.6.0.5.25.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.26.ord.sd <- order_seq(LG.f2.6.0.5.26.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.27.ord.sd <- order_seq(LG.f2.6.0.5.27.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.28.ord.sd <- order_seq(LG.f2.6.0.5.28.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.29.ord.sd <- order_seq(LG.f2.6.0.5.29.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.30.ord.sd <- order_seq(LG.f2.6.0.5.30.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.31.ord.sd <- order_seq(LG.f2.6.0.5.31.sd, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+
+
+```
+
+Now, we order the markers, all of them and only the safe ones
+
+```{r}
+LG.f2.6.0.5.1.ord.safe.sd <- make_seq(LG.f2.6.0.5.1.ord.sd,"safe")
+LG.f2.6.0.5.2.ord.safe.sd <- make_seq(LG.f2.6.0.5.2.ord.sd,"safe")
+LG.f2.6.0.5.3.ord.safe.sd <- make_seq(LG.f2.6.0.5.3.ord.sd,"safe")
+LG.f2.6.0.5.4.ord.safe.sd <- make_seq(LG.f2.6.0.5.4.ord.sd,"safe")
+LG.f2.6.0.5.5.ord.safe.sd <- make_seq(LG.f2.6.0.5.5.ord.sd,"safe")
+LG.f2.6.0.5.6.ord.safe.sd <- make_seq(LG.f2.6.0.5.6.ord.sd,"safe")
+LG.f2.6.0.5.7.ord.safe.sd <- make_seq(LG.f2.6.0.5.7.ord.sd,"safe")
+LG.f2.6.0.5.8.ord.safe.sd <- make_seq(LG.f2.6.0.5.8.ord.sd,"safe")
+LG.f2.6.0.5.9.ord.safe.sd <- make_seq(LG.f2.6.0.5.9.ord.sd,"safe")
+LG.f2.6.0.5.10.ord.safe.sd <- make_seq(LG.f2.6.0.5.10.ord.sd,"safe")
+LG.f2.6.0.5.11.ord.safe.sd <- make_seq(LG.f2.6.0.5.11.ord.sd,"safe")
+LG.f2.6.0.5.12.ord.safe.sd <- make_seq(LG.f2.6.0.5.12.ord.sd,"safe")
+LG.f2.6.0.5.13.ord.safe.sd <- make_seq(LG.f2.6.0.5.13.ord.sd,"safe")
+LG.f2.6.0.5.14.ord.safe.sd <- make_seq(LG.f2.6.0.5.14.ord.sd,"safe")
+LG.f2.6.0.5.15.ord.safe.sd <- make_seq(LG.f2.6.0.5.15.ord.sd,"safe")
+LG.f2.6.0.5.16.ord.safe.sd <- make_seq(LG.f2.6.0.5.16.ord.sd,"safe")
+LG.f2.6.0.5.17.ord.safe.sd <- make_seq(LG.f2.6.0.5.17.ord.sd,"safe")
+LG.f2.6.0.5.18.ord.safe.sd <- make_seq(LG.f2.6.0.5.18.ord.sd,"safe")
+LG.f2.6.0.5.19.ord.safe.sd <- make_seq(LG.f2.6.0.5.19.ord.sd,"safe")
+LG.f2.6.0.5.20.ord.safe.sd <- make_seq(LG.f2.6.0.5.20.ord.sd,"safe")
+LG.f2.6.0.5.21.ord.safe.sd <- make_seq(LG.f2.6.0.5.21.ord.sd,"safe")
+LG.f2.6.0.5.22.ord.safe.sd <- make_seq(LG.f2.6.0.5.22.ord.sd,"safe")
+LG.f2.6.0.5.23.ord.safe.sd <- make_seq(LG.f2.6.0.5.23.ord.sd,"safe")
+LG.f2.6.0.5.24.ord.safe.sd <- make_seq(LG.f2.6.0.5.24.ord.sd,"safe")
+LG.f2.6.0.5.25.ord.safe.sd <- make_seq(LG.f2.6.0.5.25.ord.sd,"safe")
+LG.f2.6.0.5.26.ord.safe.sd <- make_seq(LG.f2.6.0.5.26.ord.sd,"safe")
+LG.f2.6.0.5.27.ord.safe.sd <- make_seq(LG.f2.6.0.5.27.ord.sd,"safe")
+LG.f2.6.0.5.28.ord.safe.sd <- make_seq(LG.f2.6.0.5.28.ord.sd,"safe")
+LG.f2.6.0.5.29.ord.safe.sd <- make_seq(LG.f2.6.0.5.29.ord.sd,"safe")
+LG.f2.6.0.5.30.ord.safe.sd <- make_seq(LG.f2.6.0.5.30.ord.sd,"safe")
+LG.f2.6.0.5.31.ord.safe.sd <- make_seq(LG.f2.6.0.5.31.ord.sd,"safe")
+
+LG.f2.6.0.5.1.ord.all.sd <- make_seq(LG.f2.6.0.5.1.ord.sd,"force")
+LG.f2.6.0.5.2.ord.all.sd <- make_seq(LG.f2.6.0.5.2.ord.sd,"force")
+LG.f2.6.0.5.3.ord.all.sd <- make_seq(LG.f2.6.0.5.3.ord.sd,"force")
+LG.f2.6.0.5.4.ord.all.sd <- make_seq(LG.f2.6.0.5.4.ord.sd,"force")
+LG.f2.6.0.5.5.ord.all.sd <- make_seq(LG.f2.6.0.5.5.ord.sd,"force")
+LG.f2.6.0.5.6.ord.all.sd <- make_seq(LG.f2.6.0.5.6.ord.sd,"force")
+LG.f2.6.0.5.7.ord.all.sd <- make_seq(LG.f2.6.0.5.7.ord.sd,"force")
+LG.f2.6.0.5.8.ord.all.sd <- make_seq(LG.f2.6.0.5.8.ord.sd,"force")
+LG.f2.6.0.5.9.ord.all.sd <- make_seq(LG.f2.6.0.5.9.ord.sd,"force")
+LG.f2.6.0.5.10.ord.all.sd <- make_seq(LG.f2.6.0.5.10.ord.sd,"force")
+LG.f2.6.0.5.11.ord.all.sd <- make_seq(LG.f2.6.0.5.11.ord.sd,"force")
+LG.f2.6.0.5.12.ord.all.sd <- make_seq(LG.f2.6.0.5.12.ord.sd,"force")
+LG.f2.6.0.5.13.ord.all.sd <- make_seq(LG.f2.6.0.5.13.ord.sd,"force")
+LG.f2.6.0.5.14.ord.all.sd <- make_seq(LG.f2.6.0.5.14.ord.sd,"force")
+LG.f2.6.0.5.15.ord.all.sd <- make_seq(LG.f2.6.0.5.15.ord.sd,"force")
+LG.f2.6.0.5.16.ord.all.sd <- make_seq(LG.f2.6.0.5.16.ord.sd,"force")
+LG.f2.6.0.5.17.ord.all.sd <- make_seq(LG.f2.6.0.5.17.ord.sd,"force")
+LG.f2.6.0.5.18.ord.all.sd <- make_seq(LG.f2.6.0.5.18.ord.sd,"force")
+LG.f2.6.0.5.19.ord.all.sd <- make_seq(LG.f2.6.0.5.19.ord.sd,"force")
+LG.f2.6.0.5.20.ord.all.sd <- make_seq(LG.f2.6.0.5.20.ord.sd,"force")
+LG.f2.6.0.5.21.ord.all.sd <- make_seq(LG.f2.6.0.5.21.ord.sd,"force")
+LG.f2.6.0.5.22.ord.all.sd <- make_seq(LG.f2.6.0.5.22.ord.sd,"force")
+LG.f2.6.0.5.23.ord.all.sd <- make_seq(LG.f2.6.0.5.23.ord.sd,"force")
+LG.f2.6.0.5.24.ord.all.sd <- make_seq(LG.f2.6.0.5.24.ord.sd,"force")
+LG.f2.6.0.5.25.ord.all.sd <- make_seq(LG.f2.6.0.5.25.ord.sd,"force")
+LG.f2.6.0.5.26.ord.all.sd <- make_seq(LG.f2.6.0.5.26.ord.sd,"force")
+LG.f2.6.0.5.27.ord.all.sd <- make_seq(LG.f2.6.0.5.27.ord.sd,"force")
+LG.f2.6.0.5.28.ord.all.sd <- make_seq(LG.f2.6.0.5.28.ord.sd,"force")
+LG.f2.6.0.5.29.ord.all.sd <- make_seq(LG.f2.6.0.5.29.ord.sd,"force")
+LG.f2.6.0.5.30.ord.all.sd <- make_seq(LG.f2.6.0.5.30.ord.sd,"force")
+LG.f2.6.0.5.31.ord.all.sd <- make_seq(LG.f2.6.0.5.31.ord.sd,"force")
+
+```
+
+Drawing the genetic map
+
+```{r}
+Map.6.0.5.ord.safe.sd <- list(
+LG.f2.6.0.5.1.ord.safe.sd, 
+LG.f2.6.0.5.2.ord.safe.sd, 
+LG.f2.6.0.5.3.ord.safe.sd, 
+LG.f2.6.0.5.4.ord.safe.sd, 
+LG.f2.6.0.5.5.ord.safe.sd, 
+LG.f2.6.0.5.6.ord.safe.sd, 
+LG.f2.6.0.5.7.ord.safe.sd, 
+LG.f2.6.0.5.8.ord.safe.sd, 
+LG.f2.6.0.5.9.ord.safe.sd, 
+LG.f2.6.0.5.10.ord.safe.sd,
+LG.f2.6.0.5.11.ord.safe.sd,
+LG.f2.6.0.5.12.ord.safe.sd,
+LG.f2.6.0.5.13.ord.safe.sd,
+LG.f2.6.0.5.14.ord.safe.sd,
+LG.f2.6.0.5.15.ord.safe.sd,
+LG.f2.6.0.5.16.ord.safe.sd,
+LG.f2.6.0.5.17.ord.safe.sd,
+LG.f2.6.0.5.18.ord.safe.sd,
+LG.f2.6.0.5.19.ord.safe.sd,
+LG.f2.6.0.5.20.ord.safe.sd,
+LG.f2.6.0.5.21.ord.safe.sd,
+LG.f2.6.0.5.22.ord.safe.sd,
+LG.f2.6.0.5.23.ord.safe.sd,
+LG.f2.6.0.5.24.ord.safe.sd,
+LG.f2.6.0.5.25.ord.safe.sd,
+LG.f2.6.0.5.26.ord.safe.sd,
+LG.f2.6.0.5.27.ord.safe.sd,
+LG.f2.6.0.5.28.ord.safe.sd,
+LG.f2.6.0.5.29.ord.safe.sd,
+LG.f2.6.0.5.30.ord.safe.sd,
+LG.f2.6.0.5.31.ord.safe.sd)
+
+Map.6.0.5.ord.all.sd <- list(
+LG.f2.6.0.5.1.ord.all.sd, 
+LG.f2.6.0.5.2.ord.all.sd, 
+LG.f2.6.0.5.3.ord.all.sd, 
+LG.f2.6.0.5.4.ord.all.sd, 
+LG.f2.6.0.5.5.ord.all.sd, 
+LG.f2.6.0.5.6.ord.all.sd, 
+LG.f2.6.0.5.7.ord.all.sd, 
+LG.f2.6.0.5.8.ord.all.sd, 
+LG.f2.6.0.5.9.ord.all.sd, 
+LG.f2.6.0.5.10.ord.all.sd,
+LG.f2.6.0.5.11.ord.all.sd,
+LG.f2.6.0.5.12.ord.all.sd,
+LG.f2.6.0.5.13.ord.all.sd,
+LG.f2.6.0.5.14.ord.all.sd,
+LG.f2.6.0.5.15.ord.all.sd,
+LG.f2.6.0.5.16.ord.all.sd,
+LG.f2.6.0.5.17.ord.all.sd,
+LG.f2.6.0.5.18.ord.all.sd,
+LG.f2.6.0.5.19.ord.all.sd,
+LG.f2.6.0.5.20.ord.all.sd,
+LG.f2.6.0.5.21.ord.all.sd,
+LG.f2.6.0.5.22.ord.all.sd,
+LG.f2.6.0.5.23.ord.all.sd,
+LG.f2.6.0.5.24.ord.all.sd,
+LG.f2.6.0.5.25.ord.all.sd,
+LG.f2.6.0.5.26.ord.all.sd,
+LG.f2.6.0.5.27.ord.all.sd,
+LG.f2.6.0.5.28.ord.all.sd,
+LG.f2.6.0.5.29.ord.all.sd,
+LG.f2.6.0.5.30.ord.all.sd,
+LG.f2.6.0.5.31.ord.all.sd)
+
+pdf("Map.6.0.5.ord.safe.sd.pdf")
+draw_map(Map.6.0.5.ord.safe.sd, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
+
+pdf("Map.6.0.5.ord.all.sd.pdf")
+draw_map(Map.6.0.5.ord.all.sd, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
+
+```
+
+
+Linage group 2 has more of 50 cM between the majority of the markers and the remaining 3
+
+```{r}
+
+LG.f2.6.0.5.2.ord.safe2 <- LG.f2.6.0.5.2.ord.safe
+LG.f2.6.0.5.2.ord.safe2$seq.rf <- LG.f2.6.0.5.2.ord.safe$seq.rf[-c(1:3)]
+LG.f2.6.0.5.2.ord.safe2$seq.phases <- LG.f2.6.0.5.2.ord.safe$seq.phases[-c(1:3)]
+LG.f2.6.0.5.2.ord.safe2$seq.num <- LG.f2.6.0.5.2.ord.safe$seq.num[-c(1:3)]
+LG.f2.6.0.5.2.ord.safe2
+
+Map.6.0.5.ord.safe2 <- list(
+LG.f2.6.0.5.1.ord.safe, 
+LG.f2.6.0.5.2.ord.safe2, 
+LG.f2.6.0.5.3.ord.safe, 
+LG.f2.6.0.5.4.ord.safe, 
+LG.f2.6.0.5.5.ord.safe, 
+LG.f2.6.0.5.6.ord.safe, 
+LG.f2.6.0.5.7.ord.safe, 
+LG.f2.6.0.5.8.ord.safe, 
+LG.f2.6.0.5.9.ord.safe, 
+LG.f2.6.0.5.10.ord.safe,
+LG.f2.6.0.5.11.ord.safe,
+LG.f2.6.0.5.12.ord.safe,
+LG.f2.6.0.5.13.ord.safe,
+LG.f2.6.0.5.14.ord.safe,
+LG.f2.6.0.5.15.ord.safe,
+LG.f2.6.0.5.16.ord.safe,
+LG.f2.6.0.5.17.ord.safe,
+LG.f2.6.0.5.18.ord.safe,
+LG.f2.6.0.5.19.ord.safe,
+LG.f2.6.0.5.20.ord.safe,
+LG.f2.6.0.5.21.ord.safe,
+LG.f2.6.0.5.22.ord.safe,
+LG.f2.6.0.5.23.ord.safe,
+LG.f2.6.0.5.24.ord.safe,
+LG.f2.6.0.5.25.ord.safe,
+LG.f2.6.0.5.26.ord.safe,
+LG.f2.6.0.5.27.ord.safe,
+LG.f2.6.0.5.28.ord.safe,
+LG.f2.6.0.5.29.ord.safe,
+LG.f2.6.0.5.30.ord.safe,
+LG.f2.6.0.5.31.ord.safe,
+LG.f2.6.0.5.32.ord.safe)
+
+draw.map(Map.6.0.5.ord.safe2, names= TRUE, grid=TRUE, cex.mrk=0.3)
+
+```
+
+Linage group 24 has more of 50 cM between the majority of the markers and the remaining 8
+
+```{r}
+
+LG.f2.6.0.5.24.ord.safe2 <- LG.f2.6.0.5.24.ord.safe
+LG.f2.6.0.5.24.ord.safe2$seq.rf <- LG.f2.6.0.5.24.ord.safe$seq.rf[-c(1:8)]
+LG.f2.6.0.5.24.ord.safe2$seq.phases <- LG.f2.6.0.5.24.ord.safe$seq.phases[-c(1:8)]
+LG.f2.6.0.5.24.ord.safe2$seq.num <- LG.f2.6.0.5.24.ord.safe$seq.num[-c(1:8)]
+LG.f2.6.0.5.24.ord.safe2
+
+Map.6.0.5.ord.safe3 <- list(
+LG.f2.6.0.5.1.ord.safe, 
+LG.f2.6.0.5.2.ord.safe2, 
+LG.f2.6.0.5.3.ord.safe, 
+LG.f2.6.0.5.4.ord.safe, 
+LG.f2.6.0.5.5.ord.safe, 
+LG.f2.6.0.5.6.ord.safe, 
+LG.f2.6.0.5.7.ord.safe, 
+LG.f2.6.0.5.8.ord.safe, 
+LG.f2.6.0.5.9.ord.safe, 
+LG.f2.6.0.5.10.ord.safe,
+LG.f2.6.0.5.11.ord.safe,
+LG.f2.6.0.5.12.ord.safe,
+LG.f2.6.0.5.13.ord.safe,
+LG.f2.6.0.5.14.ord.safe,
+LG.f2.6.0.5.15.ord.safe,
+LG.f2.6.0.5.16.ord.safe,
+LG.f2.6.0.5.17.ord.safe,
+LG.f2.6.0.5.18.ord.safe,
+LG.f2.6.0.5.19.ord.safe,
+LG.f2.6.0.5.20.ord.safe,
+LG.f2.6.0.5.21.ord.safe,
+LG.f2.6.0.5.22.ord.safe,
+LG.f2.6.0.5.23.ord.safe,
+LG.f2.6.0.5.24.ord.safe2,
+LG.f2.6.0.5.25.ord.safe,
+LG.f2.6.0.5.26.ord.safe,
+LG.f2.6.0.5.27.ord.safe,
+LG.f2.6.0.5.28.ord.safe,
+LG.f2.6.0.5.29.ord.safe,
+LG.f2.6.0.5.30.ord.safe,
+LG.f2.6.0.5.31.ord.safe,
+LG.f2.6.0.5.32.ord.safe)
+
+draw.map(Map.6.0.5.ord.safe3, names= TRUE, grid=TRUE, cex.mrk=0.3)
+
+```
+
+Finally, the linkage group 25 have over 40 cM between the majority of the markers and the last one
+
+
+```{r}
+
+LG.f2.6.0.5.25.ord.safe2 <- LG.f2.6.0.5.25.ord.safe
+LG.f2.6.0.5.25.ord.safe2$seq.num <- LG.f2.6.0.5.25.ord.safe$seq.num[1:19]
+LG.f2.6.0.5.25.ord.safe2$seq.rf <- LG.f2.6.0.5.25.ord.safe$seq.rf[1:18]
+LG.f2.6.0.5.25.ord.safe2$seq.phases <- LG.f2.6.0.5.25.ord.safe$seq.phases[1:18]
+LG.f2.6.0.5.25.ord.safe2
+
+Map.6.0.5.ord.safe4 <- list(
+LG.f2.6.0.5.1.ord.safe, 
+LG.f2.6.0.5.2.ord.safe2, 
+LG.f2.6.0.5.3.ord.safe, 
+LG.f2.6.0.5.4.ord.safe, 
+LG.f2.6.0.5.5.ord.safe, 
+LG.f2.6.0.5.6.ord.safe, 
+LG.f2.6.0.5.7.ord.safe, 
+LG.f2.6.0.5.8.ord.safe, 
+LG.f2.6.0.5.9.ord.safe, 
+LG.f2.6.0.5.10.ord.safe,
+LG.f2.6.0.5.11.ord.safe,
+LG.f2.6.0.5.12.ord.safe,
+LG.f2.6.0.5.13.ord.safe,
+LG.f2.6.0.5.14.ord.safe,
+LG.f2.6.0.5.15.ord.safe,
+LG.f2.6.0.5.16.ord.safe,
+LG.f2.6.0.5.17.ord.safe,
+LG.f2.6.0.5.18.ord.safe,
+LG.f2.6.0.5.19.ord.safe,
+LG.f2.6.0.5.20.ord.safe,
+LG.f2.6.0.5.21.ord.safe,
+LG.f2.6.0.5.22.ord.safe,
+LG.f2.6.0.5.23.ord.safe,
+LG.f2.6.0.5.24.ord.safe2,
+LG.f2.6.0.5.25.ord.safe2,
+LG.f2.6.0.5.26.ord.safe,
+LG.f2.6.0.5.27.ord.safe,
+LG.f2.6.0.5.28.ord.safe,
+LG.f2.6.0.5.29.ord.safe,
+LG.f2.6.0.5.30.ord.safe,
+LG.f2.6.0.5.31.ord.safe,
+LG.f2.6.0.5.32.ord.safe)
+
+draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
+
+```
+
+This is our final map!
+
+Now we are going to look for linkage groups with a higher number than markers under segregation distortion that what would be expected by chance.
+But first we will check wether or not there is a correlation between missing data and segregation distortion.
+
+```{r}
+
+mydata <- read.csv(file="permutations1.csv")
+mydata
+x2 <- mydata[,2]
+missingdata <- mydata[,3]
+summary(lm(x2 ~ missingdata))
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+
+
+LG1 <- matrix(0, nrow=1000, ncol = 24)
+for (j in 1:1000) LG1[j,] <- sample(x2, 24, replace = FALSE, prob = NULL)
+histLG1 <- vector()
+for (i in 1:1000) histLG1[i] <- length(LG1[i,][LG1[i,]>5.991])
+hist(histLG1)
+abline(v=1,col="red")
+
+LG2 <- matrix(0, nrow=1000, ncol = 65)
+for (j in 1:1000) LG2[j,] <- sample(x2, 65, replace = FALSE, prob = NULL)
+histLG2 <- vector()
+for (i in 1:1000) histLG2[i] <- length(LG2[i,][LG2[i,]>5.991])
+hist(histLG2)
+abline(v=19,col="red")
+
+LG3 <- matrix(0, nrow=1000, ncol = 84)
+for (j in 1:1000) LG3[j,] <- sample(x2, 84, replace = FALSE, prob = NULL)
+histLG3 <- vector()
+for (i in 1:1000) histLG3[i] <- length(LG3[i,][LG3[i,]>5.991])
+hist(histLG3)
+abline(v=20,col="red")
+
+LG4 <- matrix(0, nrow=1000, ncol = 36)
+for (j in 1:1000) LG4[j,] <- sample(x2, 36, replace = FALSE, prob = NULL)
+histLG4 <- vector()
+for (i in 1:1000) histLG4[i] <- length(LG4[i,][LG5[i,]>5.991])
+hist(histLG4)
+abline(v=9,col="red")
+
+LG5 <- matrix(0, nrow=1000, ncol = 40)
+for (j in 1:1000) LG5[j,] <- sample(x2, 40, replace = FALSE, prob = NULL)
+histLG5 <- vector()
+for (i in 1:1000) histLG5[i] <- length(LG5[i,][LG5[i,]>5.991])
+hist(histLG5)
+abline(v=2,col="red")
+
+LG6 <- matrix(0, nrow=1000, ncol = 65)
+for (j in 1:1000) LG6[j,] <- sample(x2, 65, replace = FALSE, prob = NULL)
+histLG6 <- vector()
+for (i in 1:1000) histLG6[i] <- length(LG6[i,][LG6[i,]>5.991])
+hist(histLG6, xlim = c(0,25))
+abline(v=0,col="red")
+
+LG7 <- matrix(0, nrow=1000, ncol = 31)
+for (j in 1:1000) LG7[j,] <- sample(x2, 31, replace = FALSE, prob = NULL)
+histLG7 <- vector()
+for (i in 1:1000) histLG7[i] <- length(LG7[i,][LG7[i,]>5.991])
+hist(histLG7)
+abline(v=6,col="red")
+
+LG8 <- matrix(0, nrow=1000, ncol = 23)
+for (j in 1:1000) LG8[j,] <- sample(x2, 23, replace = FALSE, prob = NULL)
+histLG8 <- vector()
+for (i in 1:1000) histLG8[i] <- length(LG8[i,][LG7[i,]>5.991])
+hist(histLG8, xlim = c(0,13))
+abline(v=0,col="red")
+
+LG9 <- matrix(0, nrow=1000, ncol = 50)
+for (j in 1:1000) LG9[j,] <- sample(x2, 50, replace = FALSE, prob = NULL)
+histLG9 <- vector()
+for (i in 1:1000) histLG9[i] <- length(LG9[i,][LG9[i,]>5.991])
+hist(histLG9, , xlim = c(0,20))
+abline(v=1,col="red")
+
+LG10 <- matrix(0, nrow=1000, ncol = 36)
+for (j in 1:1000) LG10[j,] <- sample(x2, 36, replace = FALSE, prob = NULL)
+histLG10 <- vector()
+for (i in 1:1000) histLG10[i] <- length(LG10[i,][LG10[i,]>5.991])
+hist(histLG10)
+abline(v=1,col="red")
+
+LG11 <- matrix(0, nrow=1000, ncol = 51)
+for (j in 1:1000) LG11[j,] <- sample(x2, 51, replace = FALSE, prob = NULL)
+histLG11 <- vector()
+for (i in 1:1000) histLG11[i] <- length(LG11[i,][LG11[i,]>5.991])
+hist(histLG11)
+abline(v=4,col="red")
+
+LG12 <- matrix(0, nrow=1000, ncol = 53)
+for (j in 1:1000) LG12[j,] <- sample(x2, 53, replace = FALSE, prob = NULL)
+histLG12 <- vector()
+for (i in 1:1000) histLG12[i] <- length(LG12[i,][LG12[i,]>5.991])
+hist(histLG12)
+abline(v=3,col="red")
+
+LG13 <- matrix(0, nrow=1000, ncol = 28)
+for (j in 1:1000) LG13[j,] <- sample(x2, 28, replace = FALSE, prob = NULL)
+histLG13 <- vector()
+for (i in 1:1000) histLG13[i] <- length(LG13[i,][LG13[i,]>5.991])
+hist(histLG13, xlim=c(0,16), main = "")
+abline(v=15,col="red")
+
+LG14 <- matrix(0, nrow=1000, ncol = 42)
+for (j in 1:1000) LG14[j,] <- sample(x2, 42, replace = FALSE, prob = NULL)
+histLG14 <- vector()
+for (i in 1:1000) histLG14[i] <- length(LG14[i,][LG14[i,]>5.991])
+hist(histLG14)
+abline(v=13,col="red")
+
+LG15 <- matrix(0, nrow=1000, ncol = 46)
+for (j in 1:1000) LG15[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
+histLG15 <- vector()
+for (i in 1:1000) histLG15[i] <- length(LG15[i,][LG5[i,]>5.991])
+hist(histLG15)
+abline(v=3,col="red")
+
+LG16 <- matrix(0, nrow=1000, ncol = 48)
+for (j in 1:1000) LG16[j,] <- sample(x2, 48, replace = FALSE, prob = NULL)
+histLG16 <- vector()
+for (i in 1:1000) histLG16[i] <- length(LG16[i,][LG16[i,]>5.991])
+hist(histLG16)
+abline(v=6,col="red")
+
+LG15 <- matrix(0, nrow=1000, ncol = 46)
+for (j in 1:1000) LG15[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
+histLG15 <- vector()
+for (i in 1:1000) histLG15[i] <- length(LG15[i,][LG15[i,]>5.991])
+hist(histLG15)
+abline(v=3,col="red")
+
+LG17 <- matrix(0, nrow=1000, ncol = 90)
+for (j in 1:1000) LG17[j,] <- sample(x2, 90, replace = FALSE, prob = NULL)
+histLG17 <- vector()
+for (i in 1:1000) histLG17[i] <- length(LG17[i,][LG17[i,]>5.991])
+hist(histLG17, xlim=c(5,46), main = "")
+abline(v=45,col="red")
+
+LG18 <- matrix(0, nrow=1000, ncol = 71)
+for (j in 1:1000) LG18[j,] <- sample(x2, 71, replace = FALSE, prob = NULL)
+histLG18 <- vector()
+for (i in 1:1000) histLG18[i] <- length(LG18[i,][LG18[i,]>5.991])
+hist(histLG18)
+abline(v=13,col="red")
+
+LG19 <- matrix(0, nrow=1000, ncol = 27)
+for (j in 1:1000) LG19[j,] <- sample(x2, 27, replace = FALSE, prob = NULL)
+histLG19 <- vector()
+for (i in 1:1000) histLG19[i] <- length(LG19[i,][LG19[i,]>5.991])
+hist(histLG19)
+abline(v=4,col="red")
+
+LG20 <- matrix(0, nrow=1000, ncol = 58)
+for (j in 1:1000) LG20[j,] <- sample(x2, 58, replace = FALSE, prob = NULL)
+histLG20 <- vector()
+for (i in 1:1000) histLG20[i] <- length(LG20[i,][LG20[i,]>5.991])
+hist(histLG20)
+abline(v=11,col="red")
+
+LG21 <- matrix(0, nrow=1000, ncol = 49)
+for (j in 1:1000) LG21[j,] <- sample(x2, 49, replace = FALSE, prob = NULL)
+histLG21 <- vector()
+for (i in 1:1000) histLG21[i] <- length(LG21[i,][LG21[i,]>5.991])
+hist(histLG21)
+abline(v=4,col="red")
+
+LG22 <- matrix(0, nrow=1000, ncol = 46)
+for (j in 1:1000) LG22[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
+histLG22 <- vector()
+for (i in 1:1000) histLG22[i] <- length(LG22[i,][LG22[i,]>5.991])
+hist(histLG22)
+abline(v=15,col="red")
+
+LG23 <- matrix(0, nrow=1000, ncol = 23)
+for (j in 1:1000) LG23[j,] <- sample(x2, 23, replace = FALSE, prob = NULL)
+histLG23 <- vector()
+for (i in 1:1000) histLG23[i] <- length(LG23[i,][LG23[i,]>5.991])
+hist(histLG23)
+abline(v=0,col="red")
+
+LG24 <- matrix(0, nrow=1000, ncol = 39)
+for (j in 1:1000) LG24[j,] <- sample(x2, 39, replace = FALSE, prob = NULL)
+histLG24 <- vector()
+for (i in 1:1000) histLG24[i] <- length(LG24[i,][LG24[i,]>5.991])
+hist(histLG24)
+abline(v=4,col="red")
+
+LG25 <- matrix(0, nrow=1000, ncol = 26)
+for (j in 1:1000) LG25[j,] <- sample(x2, 26, replace = FALSE, prob = NULL)
+histLG25 <- vector()
+for (i in 1:1000) histLG25[i] <- length(LG25[i,][LG25[i,]>5.991])
+hist(histLG25)
+abline(v=2,col="red")
+
+LG26 <- matrix(0, nrow=1000, ncol = 41)
+for (j in 1:1000) LG26[j,] <- sample(x2, 41, replace = FALSE, prob = NULL)
+histLG26 <- vector()
+for (i in 1:1000) histLG26[i] <- length(LG26[i,][LG26[i,]>5.991])
+hist(histLG26)
+abline(v=6,col="red")
+
+LG27 <- matrix(0, nrow=1000, ncol = 49)
+for (j in 1:1000) LG27[j,] <- sample(x2, 49, replace = FALSE, prob = NULL)
+histLG27 <- vector()
+for (i in 1:1000) histLG27[i] <- length(LG27[i,][LG27[i,]>5.991])
+hist(histLG27)
+abline(v=17,col="red")
+
+LG28 <- matrix(0, nrow=1000, ncol = 38)
+for (j in 1:1000) LG28[j,] <- sample(x2, 38, replace = FALSE, prob = NULL)
+histLG28 <- vector()
+for (i in 1:1000) histLG28[i] <- length(LG28[i,][LG28[i,]>5.991])
+hist(histLG28)
+abline(v=5,col="red")
+
+LG29 <- matrix(0, nrow=1000, ncol = 39)
+for (j in 1:1000) LG29[j,] <- sample(x2, 39, replace = FALSE, prob = NULL)
+histLG29 <- vector()
+for (i in 1:1000) histLG29[i] <- length(LG29[i,][LG29[i,]>5.991])
+hist(histLG29, xlim = c(0,16))
+abline(v=0,col="red")
+
+LG30 <- matrix(0, nrow=1000, ncol = 9)
+for (j in 1:1000) LG30[j,] <- sample(x2, 9, replace = FALSE, prob = NULL)
+histLG30 <- vector()
+for (i in 1:1000) histLG30[i] <- length(LG30[i,][LG30[i,]>5.991])
+hist(histLG30)
+abline(v=2,col="red")
+
+LG31 <- matrix(0, nrow=1000, ncol = 9)
+for (j in 1:1000) LG31[j,] <- sample(x2, 9, replace = FALSE, prob = NULL)
+histLG31 <- vector()
+for (i in 1:1000) histLG31[i] <- length(LG31[i,][LG31[i,]>5.991])
+hist(histLG31, xlim = c(-1,10), main = "")
+abline(v=8,col="red")
+
+LG32 <- matrix(0, nrow=1000, ncol = 5)
+for (j in 1:1000) LG32[j,] <- sample(x2, 5, replace = FALSE, prob = NULL)
+histLG32 <- vector()
+for (i in 1:1000) histLG32[i] <- length(LG32[i,][LG32[i,]>5.991])
+hist(histLG32, xlim = c(-1,10))
+abline(v=2,col="red")
+
+```
+
+Linkage groups 13, 17 and 31 have more markers under segregation distortion that expected by chance
+
+Now we are going to check whether or not those markers under segregation distortion are grouped together within the linkage groups.
+
+And first, we will check again whether or not for these specific linkage groups there is any king of correlation between missing data and segregation distortion.
+
+```{r}
+
+x2.all <- mydata[,2]
+
+LG31 <- read.csv(file = "LG31.csv")
+x2 <- LG31[,3]
+missingdata <- LG31[,4]
+summary(lm(x2 ~ missingdata))
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+LG31MATRIX1000 <- matrix(0,9,1000)
+LG31.1000 <- cbind(LG31,LG31MATRIX1000)
+for (i in 5:1004) LG31.1000[,i] <- sample(x2.all, 9, replace = FALSE, prob = NULL)
+
+LG17 <- read.csv(file = "LG17.csv")
+x2 <- LG17[,3]
+missingdata <- LG17[,4]
+summary(lm(x2 ~ missingdata))
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+LG17MATRIX1000 <- matrix(0,90,1000)
+LG17.1000 <- cbind(LG17,LG17MATRIX1000)
+for (i in 5:1004) LG17.1000[,i] <- sample(x2.all, 90, replace = FALSE, prob = NULL)
+
+LG13 <- read.csv(file = "LG13.csv")
+x2 <- LG13[,3]
+missingdata <- LG13[,4]
+summary(lm(x2 ~ missingdata))
+plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+LG13MATRIX1000 <- matrix(0,28,1000)
+LG13.1000 <- cbind(LG13,LG13MATRIX1000)
+for (i in 5:1004) LG13.1000[,i] <- sample(x2.all, 28, replace = FALSE, prob = NULL)
+
+LG31CIsup <- vector()
+LG31$CIsup <- 5.991
+LG31$CIinf <- 0
+
+library(ggplot2)
+p31 <- ggplot(LG31, aes(POSITION))+
+  geom_line(data=subset(LG31),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG31),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG31),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG31),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p31
+
+LG17CIsup <- vector()
+LG17$CIsup <- 5.991
+LG17$CIinf <- 0
+
+p17 <- ggplot(LG17, aes(POSITION))+
+  geom_line(data=subset(LG17),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG17),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG17),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p17
+
+LG13CIsup <- vector()
+LG13$CIsup <- 5.991
+LG13$CIinf <- 0
+
+p13 <- ggplot(LG13, aes(POSITION))+
+  geom_line(data=subset(LG13),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG13),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG13),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p13
+
+
+library(adehabitat)
+wawotest(as.numeric(LG31$CHISQUARE > 5.991))
+wawotest(as.numeric(LG17$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+
+```
+
+Now we are going to repeat the last analysis for LG17 and LG13 but excluding the loci that are not safely located
+
+```{r}
+LG17red <- read.csv(file = "LG17.red.csv")
+LG17red$CIsup <- 5.991
+LG17red$CIinf <- 0
+
+p17red <- ggplot(LG17red, aes(POSITION))+
+  geom_line(data=subset(LG17red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG17red),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG17red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p17red
+
+LG13red <- read.csv(file = "LG13.red.csv")
+LG13red$CIsup <- 5.991
+LG13red$CIinf <- 0
+
+p13red <- ggplot(LG13red, aes(POSITION))+
+  geom_line(data=subset(LG13red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
+  geom_point(data=subset(LG13red),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 15))+
+  geom_ribbon(data=subset(LG13red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=30)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p13red
+
+
+library(adehabitat)
+wawotest(as.numeric(LG17red$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+
+```
+
+
 
