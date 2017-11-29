@@ -1020,172 +1020,41 @@ dev.off()
 ```
 
 
-Linage group 2 has more of 50 cM between the majority of the markers and the remaining 3
-
-```{r}
-
-LG.f2.6.0.5.2.ord.safe2 <- LG.f2.6.0.5.2.ord.safe
-LG.f2.6.0.5.2.ord.safe2$seq.rf <- LG.f2.6.0.5.2.ord.safe$seq.rf[-c(1:3)]
-LG.f2.6.0.5.2.ord.safe2$seq.phases <- LG.f2.6.0.5.2.ord.safe$seq.phases[-c(1:3)]
-LG.f2.6.0.5.2.ord.safe2$seq.num <- LG.f2.6.0.5.2.ord.safe$seq.num[-c(1:3)]
-LG.f2.6.0.5.2.ord.safe2
-
-Map.6.0.5.ord.safe2 <- list(
-LG.f2.6.0.5.1.ord.safe, 
-LG.f2.6.0.5.2.ord.safe2, 
-LG.f2.6.0.5.3.ord.safe, 
-LG.f2.6.0.5.4.ord.safe, 
-LG.f2.6.0.5.5.ord.safe, 
-LG.f2.6.0.5.6.ord.safe, 
-LG.f2.6.0.5.7.ord.safe, 
-LG.f2.6.0.5.8.ord.safe, 
-LG.f2.6.0.5.9.ord.safe, 
-LG.f2.6.0.5.10.ord.safe,
-LG.f2.6.0.5.11.ord.safe,
-LG.f2.6.0.5.12.ord.safe,
-LG.f2.6.0.5.13.ord.safe,
-LG.f2.6.0.5.14.ord.safe,
-LG.f2.6.0.5.15.ord.safe,
-LG.f2.6.0.5.16.ord.safe,
-LG.f2.6.0.5.17.ord.safe,
-LG.f2.6.0.5.18.ord.safe,
-LG.f2.6.0.5.19.ord.safe,
-LG.f2.6.0.5.20.ord.safe,
-LG.f2.6.0.5.21.ord.safe,
-LG.f2.6.0.5.22.ord.safe,
-LG.f2.6.0.5.23.ord.safe,
-LG.f2.6.0.5.24.ord.safe,
-LG.f2.6.0.5.25.ord.safe,
-LG.f2.6.0.5.26.ord.safe,
-LG.f2.6.0.5.27.ord.safe,
-LG.f2.6.0.5.28.ord.safe,
-LG.f2.6.0.5.29.ord.safe,
-LG.f2.6.0.5.30.ord.safe,
-LG.f2.6.0.5.31.ord.safe,
-LG.f2.6.0.5.32.ord.safe)
-
-draw.map(Map.6.0.5.ord.safe2, names= TRUE, grid=TRUE, cex.mrk=0.3)
-
-```
-
-Linage group 24 has more of 50 cM between the majority of the markers and the remaining 8
-
-```{r}
-
-LG.f2.6.0.5.24.ord.safe2 <- LG.f2.6.0.5.24.ord.safe
-LG.f2.6.0.5.24.ord.safe2$seq.rf <- LG.f2.6.0.5.24.ord.safe$seq.rf[-c(1:8)]
-LG.f2.6.0.5.24.ord.safe2$seq.phases <- LG.f2.6.0.5.24.ord.safe$seq.phases[-c(1:8)]
-LG.f2.6.0.5.24.ord.safe2$seq.num <- LG.f2.6.0.5.24.ord.safe$seq.num[-c(1:8)]
-LG.f2.6.0.5.24.ord.safe2
-
-Map.6.0.5.ord.safe3 <- list(
-LG.f2.6.0.5.1.ord.safe, 
-LG.f2.6.0.5.2.ord.safe2, 
-LG.f2.6.0.5.3.ord.safe, 
-LG.f2.6.0.5.4.ord.safe, 
-LG.f2.6.0.5.5.ord.safe, 
-LG.f2.6.0.5.6.ord.safe, 
-LG.f2.6.0.5.7.ord.safe, 
-LG.f2.6.0.5.8.ord.safe, 
-LG.f2.6.0.5.9.ord.safe, 
-LG.f2.6.0.5.10.ord.safe,
-LG.f2.6.0.5.11.ord.safe,
-LG.f2.6.0.5.12.ord.safe,
-LG.f2.6.0.5.13.ord.safe,
-LG.f2.6.0.5.14.ord.safe,
-LG.f2.6.0.5.15.ord.safe,
-LG.f2.6.0.5.16.ord.safe,
-LG.f2.6.0.5.17.ord.safe,
-LG.f2.6.0.5.18.ord.safe,
-LG.f2.6.0.5.19.ord.safe,
-LG.f2.6.0.5.20.ord.safe,
-LG.f2.6.0.5.21.ord.safe,
-LG.f2.6.0.5.22.ord.safe,
-LG.f2.6.0.5.23.ord.safe,
-LG.f2.6.0.5.24.ord.safe2,
-LG.f2.6.0.5.25.ord.safe,
-LG.f2.6.0.5.26.ord.safe,
-LG.f2.6.0.5.27.ord.safe,
-LG.f2.6.0.5.28.ord.safe,
-LG.f2.6.0.5.29.ord.safe,
-LG.f2.6.0.5.30.ord.safe,
-LG.f2.6.0.5.31.ord.safe,
-LG.f2.6.0.5.32.ord.safe)
-
-draw.map(Map.6.0.5.ord.safe3, names= TRUE, grid=TRUE, cex.mrk=0.3)
-
-```
-
-Finally, the linkage group 25 have over 40 cM between the majority of the markers and the last one
-
-
-```{r}
-
-LG.f2.6.0.5.25.ord.safe2 <- LG.f2.6.0.5.25.ord.safe
-LG.f2.6.0.5.25.ord.safe2$seq.num <- LG.f2.6.0.5.25.ord.safe$seq.num[1:19]
-LG.f2.6.0.5.25.ord.safe2$seq.rf <- LG.f2.6.0.5.25.ord.safe$seq.rf[1:18]
-LG.f2.6.0.5.25.ord.safe2$seq.phases <- LG.f2.6.0.5.25.ord.safe$seq.phases[1:18]
-LG.f2.6.0.5.25.ord.safe2
-
-Map.6.0.5.ord.safe4 <- list(
-LG.f2.6.0.5.1.ord.safe, 
-LG.f2.6.0.5.2.ord.safe2, 
-LG.f2.6.0.5.3.ord.safe, 
-LG.f2.6.0.5.4.ord.safe, 
-LG.f2.6.0.5.5.ord.safe, 
-LG.f2.6.0.5.6.ord.safe, 
-LG.f2.6.0.5.7.ord.safe, 
-LG.f2.6.0.5.8.ord.safe, 
-LG.f2.6.0.5.9.ord.safe, 
-LG.f2.6.0.5.10.ord.safe,
-LG.f2.6.0.5.11.ord.safe,
-LG.f2.6.0.5.12.ord.safe,
-LG.f2.6.0.5.13.ord.safe,
-LG.f2.6.0.5.14.ord.safe,
-LG.f2.6.0.5.15.ord.safe,
-LG.f2.6.0.5.16.ord.safe,
-LG.f2.6.0.5.17.ord.safe,
-LG.f2.6.0.5.18.ord.safe,
-LG.f2.6.0.5.19.ord.safe,
-LG.f2.6.0.5.20.ord.safe,
-LG.f2.6.0.5.21.ord.safe,
-LG.f2.6.0.5.22.ord.safe,
-LG.f2.6.0.5.23.ord.safe,
-LG.f2.6.0.5.24.ord.safe2,
-LG.f2.6.0.5.25.ord.safe2,
-LG.f2.6.0.5.26.ord.safe,
-LG.f2.6.0.5.27.ord.safe,
-LG.f2.6.0.5.28.ord.safe,
-LG.f2.6.0.5.29.ord.safe,
-LG.f2.6.0.5.30.ord.safe,
-LG.f2.6.0.5.31.ord.safe,
-LG.f2.6.0.5.32.ord.safe)
-
-draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
-
-```
-
-This is our final map!
+NOTE: This map is suboptimal because we have include many loci (85) under severe segregation distorion. So we are not going to "clean" the LGs as we did with the previous map. 
 
 Now we are going to look for linkage groups with a higher number than markers under segregation distortion that what would be expected by chance.
 But first we will check wether or not there is a correlation between missing data and segregation distortion.
 
 ```{r}
 
-mydata <- read.csv(file="permutations1.csv")
-mydata
-x2 <- mydata[,2]
-missingdata <- mydata[,3]
-summary(lm(x2 ~ missingdata))
-plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+mydata.sd <- read.csv(file="permutations2.csv")
+mydata.sd
+mydata.sd[,1] <- paste("M",mydata.sd[,1], sep="")
 
+x2.sd <- mydata.sd[,2]
+missingdata.sd <- mydata.sd[,3]
+summary(lm(x2.sd ~ missingdata.sd))
+pdf("missingdatavssd.sd.pdf")
+plot(x2.sd ~ missingdata.sd, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
+dev.off()
 
-LG1 <- matrix(0, nrow=1000, ncol = 24)
-for (j in 1:1000) LG1[j,] <- sample(x2, 24, replace = FALSE, prob = NULL)
-histLG1 <- vector()
-for (i in 1:1000) histLG1[i] <- length(LG1[i,][LG1[i,]>5.991])
-hist(histLG1)
-abline(v=1,col="red")
+mydata.sd[,4] <- seq(1:1427)
+
+LG1.sd <- mydata.sd[intersect(mydata.sd[,4],LG.f2.6.0.5.1.ord.all.sd$seq.num),]
+LG1.sd
+nrow(LG1.sd)
+LG1.per.sd <- matrix(0, nrow=1000, ncol = nrow(LG1.sd))
+for (j in 1:1000) LG1.per.sd[j,] <- sample(x2.sd, nrow(LG1.sd), replace = FALSE, prob = NULL)
+histLG1.sd <- vector()
+for (i in 1:1000) histLG1.sd[i] <- length(LG1.per.sd[i,][LG1.per.sd[i,]>5.991])
+
+pdf("histLG1.sd.pdf")
+hist(histLG1.sd)
+abline(v=length(LG1.sd[,2][LG1.sd[,2]>5.991]),col="red")
+dev.off()
+length(LG1.sd[,2][LG1.sd[,2]>13.5])
+###################################
+###################################
 
 LG2 <- matrix(0, nrow=1000, ncol = 65)
 for (j in 1:1000) LG2[j,] <- sample(x2, 65, replace = FALSE, prob = NULL)
