@@ -1412,6 +1412,7 @@ LG13.pos <- read.csv("LG13.sd.csv")
 setdiff(LG13.pos[,1],LG13.sd[,4])
 setdiff(LG13.pos[,2],LG13.sd[,1])
 
+library(ggplot2)
 LG13.pos[,4] <- LG13.sd[,2][match(LG13.pos[,2],LG13.sd[,1])]
 names(LG13.pos)[4] <- "CHISQUARE"
 p13.sd <- ggplot(LG13.pos, aes(POSITION))+
@@ -1425,40 +1426,44 @@ p13.sd <- ggplot(LG13.pos, aes(POSITION))+
   ylab('SD (CHISQUARE)')
 p13.sd
 
-#######################
+LG4.pos <- read.csv("LG4.sd.csv")
+setdiff(LG4.pos[,1],LG4.sd[,4])
+setdiff(LG4.pos[,2],LG4.sd[,1])
+
+LG4.pos[,4] <- LG4.sd[,2][match(LG4.pos[,2],LG4.sd[,1])]
+names(LG4.pos)[4] <- "CHISQUARE"
+p4.sd <- ggplot(LG4.pos, aes(POSITION))+
+  geom_line(data=subset(LG4.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG4.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 60))+
+  geom_ribbon(data=subset(LG4.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG4.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p4.sd
+
+
+#################33
 #HASTA AQUI
-##########################
+####################3
 
+LG4.pos <- read.csv("LG4.sd.csv")
+setdiff(LG4.pos[,1],LG4.sd[,4])
+setdiff(LG4.pos[,2],LG4.sd[,1])
 
-
-library(ggplot2)
-p31.sd <- ggplot(LG31.sd, aes(POSITION))+
-  geom_line(data=subset(LG31.sd),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG31.sd),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG31),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG31),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
+LG4.pos[,4] <- LG4.sd[,2][match(LG4.pos[,2],LG4.sd[,1])]
+names(LG4.pos)[4] <- "CHISQUARE"
+p4.sd <- ggplot(LG4.pos, aes(POSITION))+
+  geom_line(data=subset(LG4.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG4.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 60))+
+  geom_ribbon(data=subset(LG4.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG4.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
-p31
-
-LG17CIsup <- vector()
-LG17$CIsup <- 5.991
-LG17$CIinf <- 0
-
-p17 <- ggplot(LG17, aes(POSITION))+
-  geom_line(data=subset(LG17),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG17),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG17),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG17),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
-  xlab('Distance (CentiMorgan)') +
-  ylab('SD (CHISQUARE)')
-p17
-
-
+p4.sd
 
 library(adehabitat)
 wawotest(as.numeric(LG31$CHISQUARE > 5.991))
