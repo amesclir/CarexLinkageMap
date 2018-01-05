@@ -11,14 +11,14 @@ First, we load the package onemap and import the data set
 
 library (onemap)
 
-f2.onemap <- read.mapmaker(file = "onemap.f2.txt")
+f2.onemap <- read_mapmaker(file = "onemap.f2.txt")
 
 ```
 
 Second, we assign markers to linkage groups
 
 ```{r}
-twopts <- rf.2pts(f2.onemap, LOD=3, max.rf=0.5)
+twopts <- rf_2pts(f2.onemap, LOD=3, max.rf=0.5)
 mark.all <- make_seq(twopts, "all")
 LGs.f2.6.0.5 <- group(mark.all, LOD = 6, max.rf = 0.5)
 LGs.f2.6.0.5 
@@ -409,236 +409,360 @@ summary(lm(x2 ~ missingdata))
 plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 
 
-LG1 <- matrix(0, nrow=1000, ncol = 24)
-for (j in 1:1000) LG1[j,] <- sample(x2, 24, replace = FALSE, prob = NULL)
+LG1 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.1.ord.all$seq.num),]
+LG1
+nrow(LG1)
+LG1.per <- matrix(0, nrow=1000, ncol = nrow(LG1))
+for (j in 1:1000) LG1.per[j,] <- sample(x2, nrow(LG1), replace = FALSE, prob = NULL)
 histLG1 <- vector()
-for (i in 1:1000) histLG1[i] <- length(LG1[i,][LG1[i,]>5.991])
+for (i in 1:1000) histLG1[i] <- length(LG1.per[i,][LG1.per[i,]>5.991])
 hist(histLG1)
-abline(v=1,col="red")
+abline(v=length(LG1[,2][LG1[,2]>5.991]),col="red")
+length(LG1[,2][LG1[,2]>13.5])
 
-LG2 <- matrix(0, nrow=1000, ncol = 65)
-for (j in 1:1000) LG2[j,] <- sample(x2, 65, replace = FALSE, prob = NULL)
+LG2 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.2.ord.all$seq.num),]
+LG2
+nrow(LG2)
+LG2.per <- matrix(0, nrow=1000, ncol = nrow(LG2))
+for (j in 1:1000) LG2.per[j,] <- sample(x2, nrow(LG2), replace = FALSE, prob = NULL)
 histLG2 <- vector()
-for (i in 1:1000) histLG2[i] <- length(LG2[i,][LG2[i,]>5.991])
+for (i in 1:1000) histLG2[i] <- length(LG2.per[i,][LG2.per[i,]>5.991])
 hist(histLG2)
-abline(v=19,col="red")
+abline(v=length(LG2[,2][LG2[,2]>5.991]),col="red")
+length(LG2[,2][LG2[,2]>13.5])
 
-LG3 <- matrix(0, nrow=1000, ncol = 84)
-for (j in 1:1000) LG3[j,] <- sample(x2, 84, replace = FALSE, prob = NULL)
+LG3 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.3.ord.all$seq.num),]
+LG3
+nrow(LG3)
+LG3.per <- matrix(0, nrow=1000, ncol = nrow(LG3))
+for (j in 1:1000) LG3.per[j,] <- sample(x2, nrow(LG3), replace = FALSE, prob = NULL)
 histLG3 <- vector()
-for (i in 1:1000) histLG3[i] <- length(LG3[i,][LG3[i,]>5.991])
+for (i in 1:1000) histLG3[i] <- length(LG3.per[i,][LG3.per[i,]>5.991])
 hist(histLG3)
-abline(v=20,col="red")
+abline(v=length(LG3[,2][LG3[,2]>5.991]),col="red")
+length(LG3[,2][LG3[,2]>13.5])
 
-LG4 <- matrix(0, nrow=1000, ncol = 36)
-for (j in 1:1000) LG4[j,] <- sample(x2, 36, replace = FALSE, prob = NULL)
+
+LG4 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.4.ord.all$seq.num),]
+LG4
+nrow(LG4)
+LG4.per <- matrix(0, nrow=1000, ncol = nrow(LG4))
+for (j in 1:1000) LG4.per[j,] <- sample(x2, nrow(LG4), replace = FALSE, prob = NULL)
 histLG4 <- vector()
-for (i in 1:1000) histLG4[i] <- length(LG4[i,][LG5[i,]>5.991])
-hist(histLG4)
-abline(v=9,col="red")
+for (i in 1:1000) histLG4[i] <- length(LG4.per[i,][LG4.per[i,]>5.991])
+hist(histLG4, xlim = c(0,60))
+abline(v=length(LG4[,2][LG4[,2]>5.991]),col="red")
+length(LG4[,2][LG4[,2]>13.5])
 
-LG5 <- matrix(0, nrow=1000, ncol = 40)
-for (j in 1:1000) LG5[j,] <- sample(x2, 40, replace = FALSE, prob = NULL)
+LG5 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.5.ord.all$seq.num),]
+LG5
+nrow(LG5)
+LG5.per <- matrix(0, nrow=1000, ncol = nrow(LG5))
+for (j in 1:1000) LG5.per[j,] <- sample(x2, nrow(LG5), replace = FALSE, prob = NULL)
 histLG5 <- vector()
-for (i in 1:1000) histLG5[i] <- length(LG5[i,][LG5[i,]>5.991])
+for (i in 1:1000) histLG5[i] <- length(LG5.per[i,][LG5.per[i,]>5.991])
 hist(histLG5)
-abline(v=2,col="red")
+abline(v=length(LG5[,2][LG5[,2]>5.991]),col="red")
+length(LG5[,2][LG5[,2]>13.5])
 
-LG6 <- matrix(0, nrow=1000, ncol = 65)
-for (j in 1:1000) LG6[j,] <- sample(x2, 65, replace = FALSE, prob = NULL)
+
+LG6 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.6.ord.all$seq.num),]
+LG6
+nrow(LG6)
+LG6.per <- matrix(0, nrow=1000, ncol = nrow(LG6))
+for (j in 1:1000) LG6.per[j,] <- sample(x2, nrow(LG6), replace = FALSE, prob = NULL)
 histLG6 <- vector()
-for (i in 1:1000) histLG6[i] <- length(LG6[i,][LG6[i,]>5.991])
-hist(histLG6, xlim = c(0,25))
-abline(v=0,col="red")
+for (i in 1:1000) histLG6[i] <- length(LG6.per[i,][LG6.per[i,]>5.991])
+hist(histLG6)
+abline(v=length(LG6[,2][LG6[,2]>5.991]),col="red")
+length(LG6[,2][LG6[,2]>13.5])
 
-LG7 <- matrix(0, nrow=1000, ncol = 31)
-for (j in 1:1000) LG7[j,] <- sample(x2, 31, replace = FALSE, prob = NULL)
+
+LG7 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.7.ord.all$seq.num),]
+LG7
+nrow(LG7)
+LG7.per <- matrix(0, nrow=1000, ncol = nrow(LG7))
+for (j in 1:1000) LG7.per[j,] <- sample(x2, nrow(LG7), replace = FALSE, prob = NULL)
 histLG7 <- vector()
-for (i in 1:1000) histLG7[i] <- length(LG7[i,][LG7[i,]>5.991])
+for (i in 1:1000) histLG7[i] <- length(LG7.per[i,][LG7.per[i,]>5.991])
 hist(histLG7)
-abline(v=6,col="red")
+abline(v=length(LG7[,2][LG7[,2]>5.991]),col="red")
+length(LG7[,2][LG7[,2]>13.5])
 
-LG8 <- matrix(0, nrow=1000, ncol = 23)
-for (j in 1:1000) LG8[j,] <- sample(x2, 23, replace = FALSE, prob = NULL)
+LG8 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.8.ord.all$seq.num),]
+LG8
+nrow(LG8)
+LG8.per <- matrix(0, nrow=1000, ncol = nrow(LG8))
+for (j in 1:1000) LG8.per[j,] <- sample(x2, nrow(LG8), replace = FALSE, prob = NULL)
 histLG8 <- vector()
-for (i in 1:1000) histLG8[i] <- length(LG8[i,][LG7[i,]>5.991])
-hist(histLG8, xlim = c(0,13))
-abline(v=0,col="red")
+for (i in 1:1000) histLG8[i] <- length(LG8.per[i,][LG8.per[i,]>5.991])
+hist(histLG8)
+abline(v=length(LG8[,2][LG8[,2]>5.991]),col="red")
+length(LG8[,2][LG8[,2]>13.5])
 
-LG9 <- matrix(0, nrow=1000, ncol = 50)
-for (j in 1:1000) LG9[j,] <- sample(x2, 50, replace = FALSE, prob = NULL)
+LG9 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.9.ord.all$seq.num),]
+LG9
+nrow(LG9)
+LG9.per <- matrix(0, nrow=1000, ncol = nrow(LG9))
+for (j in 1:1000) LG9.per[j,] <- sample(x2, nrow(LG9), replace = FALSE, prob = NULL)
 histLG9 <- vector()
-for (i in 1:1000) histLG9[i] <- length(LG9[i,][LG9[i,]>5.991])
-hist(histLG9, , xlim = c(0,20))
-abline(v=1,col="red")
+for (i in 1:1000) histLG9[i] <- length(LG9.per[i,][LG9.per[i,]>5.991])
+hist(histLG9, xlim = c(0,30))
+abline(v=length(LG9[,2][LG9[,2]>5.991]),col="red")
+length(LG9[,2][LG9[,2]>13.5])
 
-LG10 <- matrix(0, nrow=1000, ncol = 36)
-for (j in 1:1000) LG10[j,] <- sample(x2, 36, replace = FALSE, prob = NULL)
+LG10 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.10.ord.all$seq.num),]
+LG10
+nrow(LG10)
+LG10.per <- matrix(0, nrow=1000, ncol = nrow(LG10))
+for (j in 1:1000) LG10.per[j,] <- sample(x2, nrow(LG10), replace = FALSE, prob = NULL)
 histLG10 <- vector()
-for (i in 1:1000) histLG10[i] <- length(LG10[i,][LG10[i,]>5.991])
+for (i in 1:1000) histLG10[i] <- length(LG10.per[i,][LG10.per[i,]>5.991])
 hist(histLG10)
-abline(v=1,col="red")
+abline(v=length(LG10[,2][LG10[,2]>5.991]),col="red")
+length(LG10[,2][LG10[,2]>13.5])
 
-LG11 <- matrix(0, nrow=1000, ncol = 51)
-for (j in 1:1000) LG11[j,] <- sample(x2, 51, replace = FALSE, prob = NULL)
+LG11 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.11.ord.all$seq.num),]
+LG11
+nrow(LG11)
+LG11.per <- matrix(0, nrow=1000, ncol = nrow(LG11))
+for (j in 1:1000) LG11.per[j,] <- sample(x2, nrow(LG11), replace = FALSE, prob = NULL)
 histLG11 <- vector()
-for (i in 1:1000) histLG11[i] <- length(LG11[i,][LG11[i,]>5.991])
+for (i in 1:1000) histLG11[i] <- length(LG11.per[i,][LG11.per[i,]>5.991])
 hist(histLG11)
-abline(v=4,col="red")
+abline(v=length(LG11[,2][LG11[,2]>5.991]),col="red")
+length(LG11[,2][LG11[,2]>13.5])
 
-LG12 <- matrix(0, nrow=1000, ncol = 53)
-for (j in 1:1000) LG12[j,] <- sample(x2, 53, replace = FALSE, prob = NULL)
+LG12 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.12.ord.all$seq.num),]
+LG12
+nrow(LG12)
+LG12.per <- matrix(0, nrow=1000, ncol = nrow(LG12))
+for (j in 1:1000) LG12.per[j,] <- sample(x2, nrow(LG12), replace = FALSE, prob = NULL)
 histLG12 <- vector()
-for (i in 1:1000) histLG12[i] <- length(LG12[i,][LG12[i,]>5.991])
+for (i in 1:1000) histLG12[i] <- length(LG12.per[i,][LG12.per[i,]>5.991])
 hist(histLG12)
-abline(v=3,col="red")
+abline(v=length(LG12[,2][LG12[,2]>5.991]),col="red")
+length(LG12[,2][LG12[,2]>13.5])
 
-LG13 <- matrix(0, nrow=1000, ncol = 28)
-for (j in 1:1000) LG13[j,] <- sample(x2, 28, replace = FALSE, prob = NULL)
+LG13 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.13.ord.all$seq.num),]
+LG13
+nrow(LG13)
+LG13.per <- matrix(0, nrow=1000, ncol = nrow(LG13))
+for (j in 1:1000) LG13.per[j,] <- sample(x2, nrow(LG13), replace = FALSE, prob = NULL)
 histLG13 <- vector()
-for (i in 1:1000) histLG13[i] <- length(LG13[i,][LG13[i,]>5.991])
-hist(histLG13, xlim=c(0,16), main = "")
-abline(v=15,col="red")
+for (i in 1:1000) histLG13[i] <- length(LG13.per[i,][LG13.per[i,]>5.991])
+hist(histLG13, xlim = c(2,21))
+abline(v=length(LG13[,2][LG13[,2]>5.991]),col="red")
+length(LG13[,2][LG13[,2]>13.5])
 
-LG14 <- matrix(0, nrow=1000, ncol = 42)
-for (j in 1:1000) LG14[j,] <- sample(x2, 42, replace = FALSE, prob = NULL)
+LG14 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.14.ord.all$seq.num),]
+LG14
+nrow(LG14)
+LG14.per <- matrix(0, nrow=1000, ncol = nrow(LG14))
+for (j in 1:1000) LG14.per[j,] <- sample(x2, nrow(LG14), replace = FALSE, prob = NULL)
 histLG14 <- vector()
-for (i in 1:1000) histLG14[i] <- length(LG14[i,][LG14[i,]>5.991])
+for (i in 1:1000) histLG14[i] <- length(LG14.per[i,][LG14.per[i,]>5.991])
 hist(histLG14)
-abline(v=13,col="red")
+abline(v=length(LG14[,2][LG14[,2]>5.991]),col="red")
+length(LG14[,2][LG14[,2]>13.5])
 
-LG15 <- matrix(0, nrow=1000, ncol = 46)
-for (j in 1:1000) LG15[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
+LG15 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.15.ord.all$seq.num),]
+LG15
+nrow(LG15)
+LG15.per <- matrix(0, nrow=1000, ncol = nrow(LG15))
+for (j in 1:1000) LG15.per[j,] <- sample(x2, nrow(LG15), replace = FALSE, prob = NULL)
 histLG15 <- vector()
-for (i in 1:1000) histLG15[i] <- length(LG15[i,][LG5[i,]>5.991])
+for (i in 1:1000) histLG15[i] <- length(LG15.per[i,][LG15.per[i,]>5.991])
 hist(histLG15)
-abline(v=3,col="red")
+abline(v=length(LG15[,2][LG15[,2]>5.991]),col="red")
+length(LG15[,2][LG15[,2]>13.5])
 
-LG16 <- matrix(0, nrow=1000, ncol = 48)
-for (j in 1:1000) LG16[j,] <- sample(x2, 48, replace = FALSE, prob = NULL)
+LG16 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.16.ord.all$seq.num),]
+LG16
+nrow(LG16)
+LG16.per <- matrix(0, nrow=1000, ncol = nrow(LG16))
+for (j in 1:1000) LG16.per[j,] <- sample(x2, nrow(LG16), replace = FALSE, prob = NULL)
 histLG16 <- vector()
-for (i in 1:1000) histLG16[i] <- length(LG16[i,][LG16[i,]>5.991])
+for (i in 1:1000) histLG16[i] <- length(LG16.per[i,][LG16.per[i,]>5.991])
 hist(histLG16)
-abline(v=6,col="red")
+abline(v=length(LG16[,2][LG16[,2]>5.991]),col="red")
+length(LG16[,2][LG16[,2]>13.5])
 
-LG15 <- matrix(0, nrow=1000, ncol = 46)
-for (j in 1:1000) LG15[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
-histLG15 <- vector()
-for (i in 1:1000) histLG15[i] <- length(LG15[i,][LG15[i,]>5.991])
-hist(histLG15)
-abline(v=3,col="red")
-
-LG17 <- matrix(0, nrow=1000, ncol = 90)
-for (j in 1:1000) LG17[j,] <- sample(x2, 90, replace = FALSE, prob = NULL)
+LG17 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.17.ord.all$seq.num),]
+LG17
+nrow(LG17)
+LG17.per <- matrix(0, nrow=1000, ncol = nrow(LG17))
+for (j in 1:1000) LG17.per[j,] <- sample(x2, nrow(LG17), replace = FALSE, prob = NULL)
 histLG17 <- vector()
-for (i in 1:1000) histLG17[i] <- length(LG17[i,][LG17[i,]>5.991])
-hist(histLG17, xlim=c(5,46), main = "")
-abline(v=45,col="red")
+for (i in 1:1000) histLG17[i] <- length(LG17.per[i,][LG17.per[i,]>5.991])
+hist(histLG17, xlim = c(5,50))
+abline(v=length(LG17[,2][LG17[,2]>5.991]),col="red")
+length(LG17[,2][LG17[,2]>13.5])
 
-LG18 <- matrix(0, nrow=1000, ncol = 71)
-for (j in 1:1000) LG18[j,] <- sample(x2, 71, replace = FALSE, prob = NULL)
+LG18 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.18.ord.all$seq.num),]
+LG18
+nrow(LG18)
+LG18.per <- matrix(0, nrow=1000, ncol = nrow(LG18))
+for (j in 1:1000) LG18.per[j,] <- sample(x2, nrow(LG18), replace = FALSE, prob = NULL)
 histLG18 <- vector()
-for (i in 1:1000) histLG18[i] <- length(LG18[i,][LG18[i,]>5.991])
+for (i in 1:1000) histLG18[i] <- length(LG18.per[i,][LG18.per[i,]>5.991])
 hist(histLG18)
-abline(v=13,col="red")
+abline(v=length(LG18[,2][LG18[,2]>5.991]),col="red")
+length(LG18[,2][LG18[,2]>13.5])
 
-LG19 <- matrix(0, nrow=1000, ncol = 27)
-for (j in 1:1000) LG19[j,] <- sample(x2, 27, replace = FALSE, prob = NULL)
+LG19 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.19.ord.all$seq.num),]
+LG19
+nrow(LG19)
+LG19.per <- matrix(0, nrow=1000, ncol = nrow(LG19))
+for (j in 1:1000) LG19.per[j,] <- sample(x2, nrow(LG19), replace = FALSE, prob = NULL)
 histLG19 <- vector()
-for (i in 1:1000) histLG19[i] <- length(LG19[i,][LG19[i,]>5.991])
+for (i in 1:1000) histLG19[i] <- length(LG19.per[i,][LG19.per[i,]>5.991])
 hist(histLG19)
-abline(v=4,col="red")
+abline(v=length(LG19[,2][LG19[,2]>5.991]),col="red")
+length(LG19[,2][LG19[,2]>13.5])
 
-LG20 <- matrix(0, nrow=1000, ncol = 58)
-for (j in 1:1000) LG20[j,] <- sample(x2, 58, replace = FALSE, prob = NULL)
+LG20 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.20.ord.all$seq.num),]
+LG20
+nrow(LG20)
+LG20.per <- matrix(0, nrow=1000, ncol = nrow(LG20))
+for (j in 1:1000) LG20.per[j,] <- sample(x2, nrow(LG20), replace = FALSE, prob = NULL)
 histLG20 <- vector()
-for (i in 1:1000) histLG20[i] <- length(LG20[i,][LG20[i,]>5.991])
+for (i in 1:1000) histLG20[i] <- length(LG20.per[i,][LG20.per[i,]>5.991])
 hist(histLG20)
-abline(v=11,col="red")
+abline(v=length(LG20[,2][LG20[,2]>5.991]),col="red")
+length(LG20[,2][LG20[,2]>13.5])
 
-LG21 <- matrix(0, nrow=1000, ncol = 49)
-for (j in 1:1000) LG21[j,] <- sample(x2, 49, replace = FALSE, prob = NULL)
+LG21 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.21.ord.all$seq.num),]
+LG21
+nrow(LG21)
+LG21.per <- matrix(0, nrow=1000, ncol = nrow(LG21))
+for (j in 1:1000) LG21.per[j,] <- sample(x2, nrow(LG21), replace = FALSE, prob = NULL)
 histLG21 <- vector()
-for (i in 1:1000) histLG21[i] <- length(LG21[i,][LG21[i,]>5.991])
+for (i in 1:1000) histLG21[i] <- length(LG21.per[i,][LG21.per[i,]>5.991])
 hist(histLG21)
-abline(v=4,col="red")
+abline(v=length(LG21[,2][LG21[,2]>5.991]),col="red")
+length(LG21[,2][LG21[,2]>13.5])
 
-LG22 <- matrix(0, nrow=1000, ncol = 46)
-for (j in 1:1000) LG22[j,] <- sample(x2, 46, replace = FALSE, prob = NULL)
+LG22 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.22.ord.all$seq.num),]
+LG22
+nrow(LG22)
+LG22.per <- matrix(0, nrow=1000, ncol = nrow(LG22))
+for (j in 1:1000) LG22.per[j,] <- sample(x2, nrow(LG22), replace = FALSE, prob = NULL)
 histLG22 <- vector()
-for (i in 1:1000) histLG22[i] <- length(LG22[i,][LG22[i,]>5.991])
+for (i in 1:1000) histLG22[i] <- length(LG22.per[i,][LG22.per[i,]>5.991])
 hist(histLG22)
-abline(v=15,col="red")
+abline(v=length(LG22[,2][LG22[,2]>5.991]),col="red")
+length(LG22[,2][LG22[,2]>13.5])
 
-LG23 <- matrix(0, nrow=1000, ncol = 23)
-for (j in 1:1000) LG23[j,] <- sample(x2, 23, replace = FALSE, prob = NULL)
+LG23 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.23.ord.all$seq.num),]
+LG23
+nrow(LG23)
+LG23.per <- matrix(0, nrow=1000, ncol = nrow(LG23))
+for (j in 1:1000) LG23.per[j,] <- sample(x2, nrow(LG23), replace = FALSE, prob = NULL)
 histLG23 <- vector()
-for (i in 1:1000) histLG23[i] <- length(LG23[i,][LG23[i,]>5.991])
-hist(histLG23)
-abline(v=0,col="red")
+for (i in 1:1000) histLG23[i] <- length(LG23.per[i,][LG23.per[i,]>5.991])
+hist(histLG23, xlim=c(0,13))
+abline(v=length(LG23[,2][LG23[,2]>5.991]),col="red")
+length(LG23[,2][LG23[,2]>13.5])
 
-LG24 <- matrix(0, nrow=1000, ncol = 39)
-for (j in 1:1000) LG24[j,] <- sample(x2, 39, replace = FALSE, prob = NULL)
+LG24 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.24.ord.all$seq.num),]
+LG24
+nrow(LG24)
+LG24.per <- matrix(0, nrow=1000, ncol = nrow(LG24))
+for (j in 1:1000) LG24.per[j,] <- sample(x2, nrow(LG24), replace = FALSE, prob = NULL)
 histLG24 <- vector()
-for (i in 1:1000) histLG24[i] <- length(LG24[i,][LG24[i,]>5.991])
+for (i in 1:1000) histLG24[i] <- length(LG24.per[i,][LG24.per[i,]>5.991])
 hist(histLG24)
-abline(v=4,col="red")
+abline(v=length(LG24[,2][LG24[,2]>5.991]),col="red")
+length(LG24[,2][LG24[,2]>13.5])
 
-LG25 <- matrix(0, nrow=1000, ncol = 26)
-for (j in 1:1000) LG25[j,] <- sample(x2, 26, replace = FALSE, prob = NULL)
+LG25 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.25.ord.all$seq.num),]
+LG25
+nrow(LG25)
+LG25.per <- matrix(0, nrow=1000, ncol = nrow(LG25))
+for (j in 1:1000) LG25.per[j,] <- sample(x2, nrow(LG25), replace = FALSE, prob = NULL)
 histLG25 <- vector()
-for (i in 1:1000) histLG25[i] <- length(LG25[i,][LG25[i,]>5.991])
+for (i in 1:1000) histLG25[i] <- length(LG25.per[i,][LG25.per[i,]>5.991])
 hist(histLG25)
-abline(v=2,col="red")
+abline(v=length(LG25[,2][LG25[,2]>5.991]),col="red")
+length(LG25[,2][LG25[,2]>13.5])
 
-LG26 <- matrix(0, nrow=1000, ncol = 41)
-for (j in 1:1000) LG26[j,] <- sample(x2, 41, replace = FALSE, prob = NULL)
+LG26 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.26.ord.all$seq.num),]
+LG26
+nrow(LG26)
+LG26.per <- matrix(0, nrow=1000, ncol = nrow(LG26))
+for (j in 1:1000) LG26.per[j,] <- sample(x2, nrow(LG26), replace = FALSE, prob = NULL)
 histLG26 <- vector()
-for (i in 1:1000) histLG26[i] <- length(LG26[i,][LG26[i,]>5.991])
+for (i in 1:1000) histLG26[i] <- length(LG26.per[i,][LG26.per[i,]>5.991])
 hist(histLG26)
-abline(v=6,col="red")
+abline(v=length(LG26[,2][LG26[,2]>5.991]),col="red")
+length(LG26[,2][LG26[,2]>13.5])
 
-LG27 <- matrix(0, nrow=1000, ncol = 49)
-for (j in 1:1000) LG27[j,] <- sample(x2, 49, replace = FALSE, prob = NULL)
+LG27 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.27.ord.all$seq.num),]
+LG27
+nrow(LG27)
+LG27.per <- matrix(0, nrow=1000, ncol = nrow(LG27))
+for (j in 1:1000) LG27.per[j,] <- sample(x2, nrow(LG27), replace = FALSE, prob = NULL)
 histLG27 <- vector()
-for (i in 1:1000) histLG27[i] <- length(LG27[i,][LG27[i,]>5.991])
+for (i in 1:1000) histLG27[i] <- length(LG27.per[i,][LG27.per[i,]>5.991])
 hist(histLG27)
-abline(v=17,col="red")
+abline(v=length(LG27[,2][LG27[,2]>5.991]),col="red")
+length(LG27[,2][LG27[,2]>13.5])
 
-LG28 <- matrix(0, nrow=1000, ncol = 38)
-for (j in 1:1000) LG28[j,] <- sample(x2, 38, replace = FALSE, prob = NULL)
+LG28 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.28.ord.all$seq.num),]
+LG28
+nrow(LG28)
+LG28.per <- matrix(0, nrow=1000, ncol = nrow(LG28))
+for (j in 1:1000) LG28.per[j,] <- sample(x2, nrow(LG28), replace = FALSE, prob = NULL)
 histLG28 <- vector()
-for (i in 1:1000) histLG28[i] <- length(LG28[i,][LG28[i,]>5.991])
+for (i in 1:1000) histLG28[i] <- length(LG28.per[i,][LG28.per[i,]>5.991])
 hist(histLG28)
-abline(v=5,col="red")
+abline(v=length(LG28[,2][LG28[,2]>5.991]),col="red")
+length(LG28[,2][LG28[,2]>13.5])
 
-LG29 <- matrix(0, nrow=1000, ncol = 39)
-for (j in 1:1000) LG29[j,] <- sample(x2, 39, replace = FALSE, prob = NULL)
+LG29 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.29.ord.all$seq.num),]
+LG29
+nrow(LG29)
+LG29.per <- matrix(0, nrow=1000, ncol = nrow(LG29))
+for (j in 1:1000) LG29.per[j,] <- sample(x2, nrow(LG29), replace = FALSE, prob = NULL)
 histLG29 <- vector()
-for (i in 1:1000) histLG29[i] <- length(LG29[i,][LG29[i,]>5.991])
-hist(histLG29, xlim = c(0,16))
-abline(v=0,col="red")
+for (i in 1:1000) histLG29[i] <- length(LG29.per[i,][LG29.per[i,]>5.991])
+hist(histLG29)
+abline(v=length(LG29[,2][LG29[,2]>5.991]),col="red")
+length(LG29[,2][LG29[,2]>13.5])
 
-LG30 <- matrix(0, nrow=1000, ncol = 9)
-for (j in 1:1000) LG30[j,] <- sample(x2, 9, replace = FALSE, prob = NULL)
+LG30 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.30.ord.all$seq.num),]
+LG30
+nrow(LG30)
+LG30.per <- matrix(0, nrow=1000, ncol = nrow(LG30))
+for (j in 1:1000) LG30.per[j,] <- sample(x2, nrow(LG30), replace = FALSE, prob = NULL)
 histLG30 <- vector()
-for (i in 1:1000) histLG30[i] <- length(LG30[i,][LG30[i,]>5.991])
+for (i in 1:1000) histLG30[i] <- length(LG30.per[i,][LG30.per[i,]>5.991])
 hist(histLG30)
-abline(v=2,col="red")
+abline(v=length(LG30[,2][LG30[,2]>5.991]),col="red")
+length(LG30[,2][LG30[,2]>13.5])
 
-LG31 <- matrix(0, nrow=1000, ncol = 9)
-for (j in 1:1000) LG31[j,] <- sample(x2, 9, replace = FALSE, prob = NULL)
+LG31 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.31.ord.all$seq.num),]
+LG31
+nrow(LG31)
+LG31.per <- matrix(0, nrow=1000, ncol = nrow(LG31))
+for (j in 1:1000) LG31.per[j,] <- sample(x2, nrow(LG31), replace = FALSE, prob = NULL)
 histLG31 <- vector()
-for (i in 1:1000) histLG31[i] <- length(LG31[i,][LG31[i,]>5.991])
-hist(histLG31, xlim = c(-1,10), main = "")
-abline(v=8,col="red")
+for (i in 1:1000) histLG31[i] <- length(LG31.per[i,][LG31.per[i,]>5.991])
+hist(histLG31)
+abline(v=length(LG31[,2][LG31[,2]>5.991]),col="red")
+length(LG31[,2][LG31[,2]>13.5])
 
-LG32 <- matrix(0, nrow=1000, ncol = 5)
-for (j in 1:1000) LG32[j,] <- sample(x2, 5, replace = FALSE, prob = NULL)
+LG32 <- mydata[intersect(mydata[,4],LG.f2.6.0.5.32.ord.all$seq.num),]
+LG32
+nrow(LG32)
+LG32.per <- matrix(0, nrow=1000, ncol = nrow(LG32))
+for (j in 1:1000) LG32.per[j,] <- sample(x2, nrow(LG32), replace = FALSE, prob = NULL)
 histLG32 <- vector()
-for (i in 1:1000) histLG32[i] <- length(LG32[i,][LG32[i,]>5.991])
-hist(histLG32, xlim = c(-1,10))
-abline(v=2,col="red")
+for (i in 1:1000) histLG32[i] <- length(LG32.per[i,][LG32.per[i,]>5.991])
+hist(histLG32)
+abline(v=length(LG32[,2][LG32[,2]>5.991]),col="red")
+length(LG32[,2][LG32[,2]>13.5])
 
 ```
 
@@ -650,126 +774,122 @@ And first, we will check again whether or not for these specific linkage groups 
 
 ```{r}
 
-x2.all <- mydata[,2]
-
-LG31 <- read.csv(file = "LG31.csv")
-x2 <- LG31[,3]
-missingdata <- LG31[,4]
+x2 <- LG31[,2]
+missingdata <- LG31[,3]
 summary(lm(x2 ~ missingdata))
 plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
-LG31MATRIX1000 <- matrix(0,9,1000)
-LG31.1000 <- cbind(LG31,LG31MATRIX1000)
-for (i in 5:1004) LG31.1000[,i] <- sample(x2.all, 9, replace = FALSE, prob = NULL)
 
-LG17 <- read.csv(file = "LG17.csv")
-x2 <- LG17[,3]
-missingdata <- LG17[,4]
+x2 <- LG17[,2]
+missingdata <- LG17[,3]
 summary(lm(x2 ~ missingdata))
 plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
-LG17MATRIX1000 <- matrix(0,90,1000)
-LG17.1000 <- cbind(LG17,LG17MATRIX1000)
-for (i in 5:1004) LG17.1000[,i] <- sample(x2.all, 90, replace = FALSE, prob = NULL)
 
-LG13 <- read.csv(file = "LG13.csv")
-x2 <- LG13[,3]
-missingdata <- LG13[,4]
+x2 <- LG13[,2]
+missingdata <- LG13[,3]
 summary(lm(x2 ~ missingdata))
 plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
-LG13MATRIX1000 <- matrix(0,28,1000)
-LG13.1000 <- cbind(LG13,LG13MATRIX1000)
-for (i in 5:1004) LG13.1000[,i] <- sample(x2.all, 28, replace = FALSE, prob = NULL)
 
-LG31CIsup <- vector()
-LG31$CIsup <- 5.991
-LG31$CIinf <- 0
+LG13.pos <- read.csv("LG13.csv")
+setdiff(LG13.pos[,1],LG13[,4])
+setdiff(LG13.pos[,2],LG13[,1])
 
 library(ggplot2)
-p31 <- ggplot(LG31, aes(POSITION))+
-  geom_line(data=subset(LG31),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG31),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG31),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG31),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
-  xlab('Distance (CentiMorgan)') +
-  ylab('SD (CHISQUARE)')
-p31
-
-LG17CIsup <- vector()
-LG17$CIsup <- 5.991
-LG17$CIinf <- 0
-
-p17 <- ggplot(LG17, aes(POSITION))+
-  geom_line(data=subset(LG17),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG17),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG17),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG17),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
-  xlab('Distance (CentiMorgan)') +
-  ylab('SD (CHISQUARE)')
-p17
-
-LG13CIsup <- vector()
-LG13$CIsup <- 5.991
-LG13$CIinf <- 0
-
-p13 <- ggplot(LG13, aes(POSITION))+
-  geom_line(data=subset(LG13),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG13),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG13),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG13),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
+LG13.pos[,4] <- LG13[,2][match(LG13.pos[,2],LG13[,1])]
+names(LG13.pos)[4] <- "CHISQUARE"
+p13 <- ggplot(LG13.pos, aes(POSITION))+
+  geom_line(data=subset(LG13.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG13.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 20))+
+  geom_ribbon(data=subset(LG13.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
 p13
 
+LG31.pos <- read.csv("LG31.csv")
+setdiff(LG31.pos[,1],LG31[,4])
+setdiff(LG31.pos[,2],LG31[,1])
+
+LG31.pos[,4] <- LG31[,2][match(LG31.pos[,2],LG31[,1])]
+names(LG31.pos)[4] <- "CHISQUARE"
+p31 <- ggplot(LG31.pos, aes(POSITION))+
+  geom_line(data=subset(LG31.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG31.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 60))+
+  geom_ribbon(data=subset(LG31.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG31.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p31
+
+
+LG17.pos <- read.csv("LG17.csv")
+setdiff(LG17.pos[,1],LG17[,4])
+setdiff(LG17.pos[,2],LG17[,1])
+
+LG17.pos[,4] <- LG17[,2][match(LG17.pos[,2],LG17[,1])]
+names(LG17.pos)[4] <- "CHISQUARE"
+p17 <- ggplot(LG17.pos, aes(POSITION))+
+  geom_line(data=subset(LG17.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG17.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 13.5))+
+  geom_ribbon(data=subset(LG17.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
+  xlab('Distance (CentiMorgan)') +
+  ylab('SD (CHISQUARE)')
+p17
 
 library(adehabitat)
 wawotest(as.numeric(LG31$CHISQUARE > 5.991))
 wawotest(as.numeric(LG17$CHISQUARE > 5.991))
 wawotest(as.numeric(LG13$CHISQUARE > 5.991))
-
 ```
 
 Now we are going to repeat the last analysis for LG17 and LG13 but excluding the loci that are not safely located
 
 ```{r}
-LG17red <- read.csv(file = "LG17.red.csv")
-LG17red$CIsup <- 5.991
-LG17red$CIinf <- 0
+LG13.red.pos <- read.csv("LG13.red.csv")
+setdiff(LG13.red.pos[,1],LG13[,4])
+setdiff(LG13.red.pos[,2],LG13[,1])
 
-p17red <- ggplot(LG17red, aes(POSITION))+
-  geom_line(data=subset(LG17red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG17red),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG17red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG17red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
+library(ggplot2)
+LG13.red.pos[,4] <- LG13[,2][match(LG13.red.pos[,2],LG13[,1])]
+names(LG13.red.pos)[4] <- "CHISQUARE"
+p13.red <- ggplot(LG13.red.pos, aes(POSITION))+
+  geom_line(data=subset(LG13.red.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG13.red.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 20))+
+  geom_ribbon(data=subset(LG13.red.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13.red.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
-p17red
+p13.red
 
-LG13red <- read.csv(file = "LG13.red.csv")
-LG13red$CIsup <- 5.991
-LG13red$CIinf <- 0
 
-p13red <- ggplot(LG13red, aes(POSITION))+
-  geom_line(data=subset(LG13red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG13red),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG13red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG13red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
+LG17.red.pos <- read.csv("LG17.red.csv")
+setdiff(LG17.red.pos[,1],LG17[,4])
+setdiff(LG17.red.pos[,2],LG17[,1])
+
+LG17.red.pos[,4] <- LG17[,2][match(LG17.red.pos[,2],LG17[,1])]
+names(LG17.red.pos)[4] <- "CHISQUARE"
+p17.red <- ggplot(LG17.red.pos, aes(POSITION))+
+  geom_line(data=subset(LG17.red.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG17.red.pos),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 13.5))+
+  geom_ribbon(data=subset(LG17.red.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17.red.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
-p13red
-
+p17.red
 
 library(adehabitat)
-wawotest(as.numeric(LG17red$CHISQUARE > 5.991))
-wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+wawotest(as.numeric(LG17.red.pos$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13.red.pos$CHISQUARE > 5.991))
 
 ```
 
@@ -1408,109 +1528,92 @@ missingdata <- LG13.sd[,3]
 summary(lm(x2 ~ missingdata))
 plot(x2 ~ missingdata, main="", xlab = "Number of individuals missing the marker", ylab = "Segregation distortion (X-square)")
 
-LG13.pos <- read.csv("LG13.sd.csv")
-setdiff(LG13.pos[,1],LG13.sd[,4])
-setdiff(LG13.pos[,2],LG13.sd[,1])
+LG13.pos.sd <- read.csv("LG13.sd.csv")
+setdiff(LG13.pos.sd[,1],LG13.sd[,4])
+setdiff(LG13.pos.sd[,2],LG13.sd[,1])
 
 library(ggplot2)
-LG13.pos[,4] <- LG13.sd[,2][match(LG13.pos[,2],LG13.sd[,1])]
-names(LG13.pos)[4] <- "CHISQUARE"
-p13.sd <- ggplot(LG13.pos, aes(POSITION))+
-  geom_line(data=subset(LG13.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
-  geom_point(data=subset(LG13.pos),aes(y=CHISQUARE),col="black")+
+LG13.pos.sd[,4] <- LG13.sd[,2][match(LG13.pos.sd[,2],LG13.sd[,1])]
+names(LG13.pos.sd)[4] <- "CHISQUARE"
+p13.sd <- ggplot(LG13.pos.sd, aes(POSITION))+
+  geom_line(data=subset(LG13.pos.sd),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG13.pos.sd),aes(y=CHISQUARE),col="black")+
   scale_y_continuous(limits = c(0, 20))+
-  geom_ribbon(data=subset(LG13.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG13.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  geom_ribbon(data=subset(LG13.pos.sd),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG13.pos.sd),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
   theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
 p13.sd
 
-LG4.pos <- read.csv("LG4.sd.csv")
-setdiff(LG4.pos[,1],LG4.sd[,4])
-setdiff(LG4.pos[,2],LG4.sd[,1])
+LG4.pos.sd <- read.csv("LG4.sd.csv")
+setdiff(LG4.pos.sd[,1],LG4.sd[,4])
+setdiff(LG4.pos.sd[,2],LG4.sd[,1])
 
-LG4.pos[,4] <- LG4.sd[,2][match(LG4.pos[,2],LG4.sd[,1])]
-names(LG4.pos)[4] <- "CHISQUARE"
-p4.sd <- ggplot(LG4.pos, aes(POSITION))+
-  geom_line(data=subset(LG4.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
-  geom_point(data=subset(LG4.pos),aes(y=CHISQUARE),col="black")+
+LG4.pos.sd[,4] <- LG4.sd[,2][match(LG4.pos.sd[,2],LG4.sd[,1])]
+names(LG4.pos.sd)[4] <- "CHISQUARE"
+p4.sd <- ggplot(LG4.pos.sd, aes(POSITION))+
+  geom_line(data=subset(LG4.pos.sd),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG4.pos.sd),aes(y=CHISQUARE),col="black")+
   scale_y_continuous(limits = c(0, 60))+
-  geom_ribbon(data=subset(LG4.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG4.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+  geom_ribbon(data=subset(LG4.pos.sd),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG4.pos.sd),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
   theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
 p4.sd
 
 
-#################33
-#HASTA AQUI
-####################3
+LG17.pos.sd <- read.csv("LG17.sd.csv")
+setdiff(LG17.pos.sd[,1],LG17.sd[,4])
+setdiff(LG17.pos.sd[,2],LG17.sd[,1])
 
-LG4.pos <- read.csv("LG4.sd.csv")
-setdiff(LG4.pos[,1],LG4.sd[,4])
-setdiff(LG4.pos[,2],LG4.sd[,1])
-
-LG4.pos[,4] <- LG4.sd[,2][match(LG4.pos[,2],LG4.sd[,1])]
-names(LG4.pos)[4] <- "CHISQUARE"
-p4.sd <- ggplot(LG4.pos, aes(POSITION))+
-  geom_line(data=subset(LG4.pos),aes(y=CHISQUARE),col="black", linetype="dotted")+
-  geom_point(data=subset(LG4.pos),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 60))+
-  geom_ribbon(data=subset(LG4.pos),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG4.pos),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
+LG17.pos.sd[,4] <- LG17.sd[,2][match(LG17.pos.sd[,2],LG17.sd[,1])]
+names(LG17.pos.sd)[4] <- "CHISQUARE"
+p17.sd <- ggplot(LG17.pos.sd, aes(POSITION))+
+  geom_line(data=subset(LG17.pos.sd),aes(y=CHISQUARE),col="black", linetype="dotted")+
+  geom_point(data=subset(LG17.pos.sd),aes(y=CHISQUARE),col="black")+
+  scale_y_continuous(limits = c(0, 13.5))+
+  geom_ribbon(data=subset(LG17.pos.sd),aes(ymin=0,ymax=5.991),alpha=0.5,fill="grey")+
+  geom_errorbar(data=subset(LG17.pos.sd),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
   theme_bw(base_size=20)+
   xlab('Distance (CentiMorgan)') +
   ylab('SD (CHISQUARE)')
-p4.sd
+p17.sd
 
 library(adehabitat)
-wawotest(as.numeric(LG31$CHISQUARE > 5.991))
-wawotest(as.numeric(LG17$CHISQUARE > 5.991))
-wawotest(as.numeric(LG13$CHISQUARE > 5.991))
+wawotest(as.numeric(LG4.sd$CHISQUARE > 5.991))
+wawotest(as.numeric(LG17.sd$CHISQUARE > 5.991))
+wawotest(as.numeric(LG13.sd$CHISQUARE > 5.991))
+
+mydata.sd.2 <- read.csv("mydata.sd.2.csv")
+LG4.sd.2 <- mydata.sd.2[intersect(mydata.sd.2[,1],LG.f2.6.0.5.4.ord.all.sd$seq.num),]
+LG4.sd.2
+mean(LG4.sd.2$ABPER)
+sd(LG4.sd.2$ABPER)
+mean(LG4.sd.2$APER)
+sd(LG4.sd.2$APER)
+mean(LG4.sd.2$BPER)
+sd(LG4.sd.2$BPER)
+
+LG13.sd.2 <- mydata.sd.2[intersect(mydata.sd.2[,1],LG.f2.6.0.5.13.ord.all.sd$seq.num),]
+LG13.sd.2
+mean(LG13.sd.2$ABPER)
+sd(LG13.sd.2$ABPER)
+mean(LG13.sd.2$APER)
+sd(LG13.sd.2$APER)
+mean(LG13.sd.2$BPER)
+sd(LG13.sd.2$BPER)
+
+LG17.sd.2 <- mydata.sd.2[intersect(mydata.sd.2[,1],LG.f2.6.0.5.17.ord.all.sd$seq.num),]
+LG17.sd.2
+mean(LG17.sd.2$ABPER)
+sd(LG17.sd.2$ABPER)
+mean(LG17.sd.2$APER)
+sd(LG17.sd.2$APER)
+mean(LG17.sd.2$BPER)
+sd(LG17.sd.2$BPER)
 
 ```
-
-Now we are going to repeat the last analysis for LG17 and LG13 but excluding the loci that are not safely located
-
-```{r}
-LG17red <- read.csv(file = "LG17.red.csv")
-LG17red$CIsup <- 5.991
-LG17red$CIinf <- 0
-
-p17red <- ggplot(LG17red, aes(POSITION))+
-  geom_line(data=subset(LG17red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG17red),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG17red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG17red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
-  xlab('Distance (CentiMorgan)') +
-  ylab('SD (CHISQUARE)')
-p17red
-
-LG13red <- read.csv(file = "LG13.red.csv")
-LG13red$CIsup <- 5.991
-LG13red$CIinf <- 0
-
-p13red <- ggplot(LG13red, aes(POSITION))+
-  geom_line(data=subset(LG13red),aes(y=CHISQUARE),col="black",width=1,linetype="dotted")+
-  geom_point(data=subset(LG13red),aes(y=CHISQUARE),col="black")+
-  scale_y_continuous(limits = c(0, 15))+
-  geom_ribbon(data=subset(LG13red),aes(ymin=CIinf,ymax=CIsup),alpha=0.5,fill="grey")+
-  geom_errorbar(data=subset(LG13red),aes(ymin=CHISQUARE,ymax=CHISQUARE),width=1)+
-  theme_bw(base_size=30)+
-  xlab('Distance (CentiMorgan)') +
-  ylab('SD (CHISQUARE)')
-p13red
-
-
-library(adehabitat)
-wawotest(as.numeric(LG17red$CHISQUARE > 5.991))
-wawotest(as.numeric(LG13$CHISQUARE > 5.991))
-
-```
-
 
 
