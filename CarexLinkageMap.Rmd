@@ -893,7 +893,8 @@ wawotest(as.numeric(LG13.red.pos$CHISQUARE > 5.991))
 
 ```
 
-
+#########################################################
+AFTER FIRST REVIEW
 ########################################################
 We are going to repeat the process but including the 85 loci under severe segregation distortion
 
@@ -1617,3 +1618,259 @@ sd(LG17.sd.2$BPER)
 ```
 
 
+
+#########################################################
+AFTER SECOND REVIEW
+########################################################
+We are going to repeat the process but including the 85 loci under severe segregation distortion AFTER MAKING THE LINKAGE MAP
+
+First, we load the package onemap and import the data set
+
+```{r}
+
+library (onemap)
+
+f2.onemap.sd <- read_mapmaker(file = "onemap.f2.sd.txt")
+
+```
+
+Second, we assign markers to linkage groups
+
+```{r}
+twopts.sd <- rf_2pts(f2.onemap.sd, LOD=3, max.rf=0.5)
+assigner <- cbind(seq(1:1427),colnames(f2.onemap.sd$geno))
+markerswithhghsd <- setdiff(colnames(f2.onemap.sd$geno),colnames(f2.onemap$geno))
+markerswithighsd2 <- assigner[assigner[,2] %in% markerswithhghsd, 1]
+markerswithouthighsd <- setdiff(seq(1:1427), markerswithighsd2)
+
+mark.all.sd2 <- make_seq(twopts.sd, markerswithouthighsd)
+LGs.f2.6.0.5.sd2 <- group(mark.all.sd2, LOD = 6, max.rf = 0.5)
+LGs.f2.6.0.5.sd2 
+```
+
+Third, we get the genetic mapping of linkage groups
+
+```{r}
+set_map_fun(type="kosambi")
+
+LG.f2.6.0.5.1.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 1)
+LG.f2.6.0.5.2.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 2)
+LG.f2.6.0.5.3.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 3)
+LG.f2.6.0.5.4.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 4)
+LG.f2.6.0.5.5.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 5)
+LG.f2.6.0.5.6.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 6)
+LG.f2.6.0.5.7.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 7)
+LG.f2.6.0.5.8.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 8)
+LG.f2.6.0.5.9.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 9)
+LG.f2.6.0.5.10.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 10)
+LG.f2.6.0.5.11.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 11)
+LG.f2.6.0.5.12.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 12)
+LG.f2.6.0.5.13.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 13)
+LG.f2.6.0.5.14.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 14)
+LG.f2.6.0.5.15.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 15)
+LG.f2.6.0.5.16.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 16)
+LG.f2.6.0.5.17.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 17)
+LG.f2.6.0.5.18.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 18)
+LG.f2.6.0.5.19.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 19)
+LG.f2.6.0.5.20.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 20)
+LG.f2.6.0.5.21.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 21)
+LG.f2.6.0.5.22.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 22)
+LG.f2.6.0.5.23.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 23)
+LG.f2.6.0.5.24.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 24)
+LG.f2.6.0.5.25.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 25)
+LG.f2.6.0.5.26.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 26)
+LG.f2.6.0.5.27.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 27)
+LG.f2.6.0.5.28.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 28)
+LG.f2.6.0.5.29.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 29)
+LG.f2.6.0.5.30.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 30)
+LG.f2.6.0.5.31.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 31)
+LG.f2.6.0.5.32.sd2 <- make_seq(LGs.f2.6.0.5.sd2, 32)
+
+
+
+LG.f2.6.0.5.1.ord.sd2 <- order_seq(LG.f2.6.0.5.1.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.2.ord.sd2 <- order_seq(LG.f2.6.0.5.2.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.3.ord.sd2 <- order_seq(LG.f2.6.0.5.3.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.4.ord.sd2 <- order_seq(LG.f2.6.0.5.4.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.5.ord.sd2 <- order_seq(LG.f2.6.0.5.5.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.6.ord.sd2 <- order_seq(LG.f2.6.0.5.6.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.7.ord.sd2 <- order_seq(LG.f2.6.0.5.7.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.8.ord.sd2 <- order_seq(LG.f2.6.0.5.8.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.9.ord.sd2 <- order_seq(LG.f2.6.0.5.9.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.10.ord.sd2 <- order_seq(LG.f2.6.0.5.10.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.11.ord.sd2 <- order_seq(LG.f2.6.0.5.11.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.12.ord.sd2 <- order_seq(LG.f2.6.0.5.12.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.13.ord.sd2 <- order_seq(LG.f2.6.0.5.13.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.14.ord.sd2 <- order_seq(LG.f2.6.0.5.14.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.15.ord.sd2 <- order_seq(LG.f2.6.0.5.15.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.16.ord.sd2 <- order_seq(LG.f2.6.0.5.16.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.17.ord.sd2 <- order_seq(LG.f2.6.0.5.17.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.18.ord.sd2 <- order_seq(LG.f2.6.0.5.18.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+#######hasta aqui
+LG.f2.6.0.5.19.ord.sd2 <- order_seq(LG.f2.6.0.5.19.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.20.ord.sd2 <- order_seq(LG.f2.6.0.5.20.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.21.ord.sd2 <- order_seq(LG.f2.6.0.5.21.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.22.ord.sd2 <- order_seq(LG.f2.6.0.5.22.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.23.ord.sd2 <- order_seq(LG.f2.6.0.5.23.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.24.ord.sd2 <- order_seq(LG.f2.6.0.5.24.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.25.ord.sd2 <- order_seq(LG.f2.6.0.5.25.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.26.ord.sd2 <- order_seq(LG.f2.6.0.5.26.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.27.ord.sd2 <- order_seq(LG.f2.6.0.5.27.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.28.ord.sd2 <- order_seq(LG.f2.6.0.5.28.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.29.ord.sd2 <- order_seq(LG.f2.6.0.5.29.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.30.ord.sd2 <- order_seq(LG.f2.6.0.5.30.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.31.ord.sd2 <- order_seq(LG.f2.6.0.5.31.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+LG.f2.6.0.5.32.ord.sd2 <- order_seq(LG.f2.6.0.5.32.sd2, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+
+
+```
+
+Now, we order the markers, all of them and only the safe ones
+
+```{r}
+LG.f2.6.0.5.1.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.1.ord.sd2,"safe")
+LG.f2.6.0.5.2.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.2.ord.sd2,"safe")
+LG.f2.6.0.5.3.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.3.ord.sd2,"safe")
+LG.f2.6.0.5.4.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.4.ord.sd2,"safe")
+LG.f2.6.0.5.5.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.5.ord.sd2,"safe")
+LG.f2.6.0.5.6.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.6.ord.sd2,"safe")
+LG.f2.6.0.5.7.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.7.ord.sd2,"safe")
+LG.f2.6.0.5.8.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.8.ord.sd2,"safe")
+LG.f2.6.0.5.9.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.9.ord.sd2,"safe")
+LG.f2.6.0.5.10.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.10.ord.sd2,"safe")
+LG.f2.6.0.5.11.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.11.ord.sd2,"safe")
+LG.f2.6.0.5.12.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.12.ord.sd2,"safe")
+LG.f2.6.0.5.13.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.13.ord.sd2,"safe")
+LG.f2.6.0.5.14.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.14.ord.sd2,"safe")
+LG.f2.6.0.5.15.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.15.ord.sd2,"safe")
+LG.f2.6.0.5.16.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.16.ord.sd2,"safe")
+LG.f2.6.0.5.17.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.17.ord.sd2,"safe")
+LG.f2.6.0.5.18.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.18.ord.sd2,"safe")
+LG.f2.6.0.5.19.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.19.ord.sd2,"safe")
+LG.f2.6.0.5.20.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.20.ord.sd2,"safe")
+LG.f2.6.0.5.21.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.21.ord.sd2,"safe")
+LG.f2.6.0.5.22.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.22.ord.sd2,"safe")
+LG.f2.6.0.5.23.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.23.ord.sd2,"safe")
+LG.f2.6.0.5.24.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.24.ord.sd2,"safe")
+LG.f2.6.0.5.25.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.25.ord.sd2,"safe")
+LG.f2.6.0.5.26.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.26.ord.sd2,"safe")
+LG.f2.6.0.5.27.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.27.ord.sd2,"safe")
+LG.f2.6.0.5.28.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.28.ord.sd2,"safe")
+LG.f2.6.0.5.29.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.29.ord.sd2,"safe")
+LG.f2.6.0.5.30.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.30.ord.sd2,"safe")
+LG.f2.6.0.5.31.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.31.ord.sd2,"safe")
+LG.f2.6.0.5.32.ord.safe.sd2 <- make_seq(LG.f2.6.0.5.32.ord.sd2,"safe")
+
+LG.f2.6.0.5.1.ord.all.sd2 <- make_seq(LG.f2.6.0.5.1.ord.sd2,"force")
+LG.f2.6.0.5.2.ord.all.sd2 <- make_seq(LG.f2.6.0.5.2.ord.sd2,"force")
+LG.f2.6.0.5.3.ord.all.sd2 <- make_seq(LG.f2.6.0.5.3.ord.sd2,"force")
+LG.f2.6.0.5.4.ord.all.sd2 <- make_seq(LG.f2.6.0.5.4.ord.sd2,"force")
+LG.f2.6.0.5.5.ord.all.sd2 <- make_seq(LG.f2.6.0.5.5.ord.sd2,"force")
+LG.f2.6.0.5.6.ord.all.sd2 <- make_seq(LG.f2.6.0.5.6.ord.sd2,"force")
+LG.f2.6.0.5.7.ord.all.sd2 <- make_seq(LG.f2.6.0.5.7.ord.sd2,"force")
+LG.f2.6.0.5.8.ord.all.sd2 <- make_seq(LG.f2.6.0.5.8.ord.sd2,"force")
+LG.f2.6.0.5.9.ord.all.sd2 <- make_seq(LG.f2.6.0.5.9.ord.sd2,"force")
+LG.f2.6.0.5.10.ord.all.sd2 <- make_seq(LG.f2.6.0.5.10.ord.sd2,"force")
+LG.f2.6.0.5.11.ord.all.sd2 <- make_seq(LG.f2.6.0.5.11.ord.sd2,"force")
+LG.f2.6.0.5.12.ord.all.sd2 <- make_seq(LG.f2.6.0.5.12.ord.sd2,"force")
+LG.f2.6.0.5.13.ord.all.sd2 <- make_seq(LG.f2.6.0.5.13.ord.sd2,"force")
+LG.f2.6.0.5.14.ord.all.sd2 <- make_seq(LG.f2.6.0.5.14.ord.sd2,"force")
+LG.f2.6.0.5.15.ord.all.sd2 <- make_seq(LG.f2.6.0.5.15.ord.sd2,"force")
+LG.f2.6.0.5.16.ord.all.sd2 <- make_seq(LG.f2.6.0.5.16.ord.sd2,"force")
+LG.f2.6.0.5.17.ord.all.sd2 <- make_seq(LG.f2.6.0.5.17.ord.sd2,"force")
+LG.f2.6.0.5.18.ord.all.sd2 <- make_seq(LG.f2.6.0.5.18.ord.sd2,"force")
+LG.f2.6.0.5.19.ord.all.sd2 <- make_seq(LG.f2.6.0.5.19.ord.sd2,"force")
+LG.f2.6.0.5.20.ord.all.sd2 <- make_seq(LG.f2.6.0.5.20.ord.sd2,"force")
+LG.f2.6.0.5.21.ord.all.sd2 <- make_seq(LG.f2.6.0.5.21.ord.sd2,"force")
+LG.f2.6.0.5.22.ord.all.sd2 <- make_seq(LG.f2.6.0.5.22.ord.sd2,"force")
+LG.f2.6.0.5.23.ord.all.sd2 <- make_seq(LG.f2.6.0.5.23.ord.sd2,"force")
+LG.f2.6.0.5.24.ord.all.sd2 <- make_seq(LG.f2.6.0.5.24.ord.sd2,"force")
+LG.f2.6.0.5.25.ord.all.sd2 <- make_seq(LG.f2.6.0.5.25.ord.sd2,"force")
+LG.f2.6.0.5.26.ord.all.sd2 <- make_seq(LG.f2.6.0.5.26.ord.sd2,"force")
+LG.f2.6.0.5.27.ord.all.sd2 <- make_seq(LG.f2.6.0.5.27.ord.sd2,"force")
+LG.f2.6.0.5.28.ord.all.sd2 <- make_seq(LG.f2.6.0.5.28.ord.sd2,"force")
+LG.f2.6.0.5.29.ord.all.sd2 <- make_seq(LG.f2.6.0.5.29.ord.sd2,"force")
+LG.f2.6.0.5.30.ord.all.sd2 <- make_seq(LG.f2.6.0.5.30.ord.sd2,"force")
+LG.f2.6.0.5.31.ord.all.sd2 <- make_seq(LG.f2.6.0.5.31.ord.sd2,"force")
+LG.f2.6.0.5.32.ord.all.sd2 <- make_seq(LG.f2.6.0.5.32.ord.sd2,"force")
+
+```
+
+Drawing the genetic map
+
+```{r}
+Map.6.0.5.ord.safe.sd <- list(
+LG.f2.6.0.5.1.ord.safe.sd, 
+LG.f2.6.0.5.2.ord.safe.sd, 
+LG.f2.6.0.5.3.ord.safe.sd, 
+LG.f2.6.0.5.4.ord.safe.sd, 
+LG.f2.6.0.5.5.ord.safe.sd, 
+LG.f2.6.0.5.6.ord.safe.sd, 
+LG.f2.6.0.5.7.ord.safe.sd, 
+LG.f2.6.0.5.8.ord.safe.sd, 
+LG.f2.6.0.5.9.ord.safe.sd, 
+LG.f2.6.0.5.10.ord.safe.sd,
+LG.f2.6.0.5.11.ord.safe.sd,
+LG.f2.6.0.5.12.ord.safe.sd,
+LG.f2.6.0.5.13.ord.safe.sd,
+LG.f2.6.0.5.14.ord.safe.sd,
+LG.f2.6.0.5.15.ord.safe.sd,
+LG.f2.6.0.5.16.ord.safe.sd,
+LG.f2.6.0.5.17.ord.safe.sd,
+LG.f2.6.0.5.18.ord.safe.sd,
+LG.f2.6.0.5.19.ord.safe.sd,
+LG.f2.6.0.5.20.ord.safe.sd,
+LG.f2.6.0.5.21.ord.safe.sd,
+LG.f2.6.0.5.22.ord.safe.sd,
+LG.f2.6.0.5.23.ord.safe.sd,
+LG.f2.6.0.5.24.ord.safe.sd,
+LG.f2.6.0.5.25.ord.safe.sd,
+LG.f2.6.0.5.26.ord.safe.sd,
+LG.f2.6.0.5.27.ord.safe.sd,
+LG.f2.6.0.5.28.ord.safe.sd,
+LG.f2.6.0.5.29.ord.safe.sd,
+LG.f2.6.0.5.30.ord.safe.sd,
+LG.f2.6.0.5.31.ord.safe.sd)
+
+Map.6.0.5.ord.all.sd <- list(
+LG.f2.6.0.5.1.ord.all.sd, 
+LG.f2.6.0.5.2.ord.all.sd, 
+LG.f2.6.0.5.3.ord.all.sd, 
+LG.f2.6.0.5.4.ord.all.sd, 
+LG.f2.6.0.5.5.ord.all.sd, 
+LG.f2.6.0.5.6.ord.all.sd, 
+LG.f2.6.0.5.7.ord.all.sd, 
+LG.f2.6.0.5.8.ord.all.sd, 
+LG.f2.6.0.5.9.ord.all.sd, 
+LG.f2.6.0.5.10.ord.all.sd,
+LG.f2.6.0.5.11.ord.all.sd,
+LG.f2.6.0.5.12.ord.all.sd,
+LG.f2.6.0.5.13.ord.all.sd,
+LG.f2.6.0.5.14.ord.all.sd,
+LG.f2.6.0.5.15.ord.all.sd,
+LG.f2.6.0.5.16.ord.all.sd,
+LG.f2.6.0.5.17.ord.all.sd,
+LG.f2.6.0.5.18.ord.all.sd,
+LG.f2.6.0.5.19.ord.all.sd,
+LG.f2.6.0.5.20.ord.all.sd,
+LG.f2.6.0.5.21.ord.all.sd,
+LG.f2.6.0.5.22.ord.all.sd,
+LG.f2.6.0.5.23.ord.all.sd,
+LG.f2.6.0.5.24.ord.all.sd,
+LG.f2.6.0.5.25.ord.all.sd,
+LG.f2.6.0.5.26.ord.all.sd,
+LG.f2.6.0.5.27.ord.all.sd,
+LG.f2.6.0.5.28.ord.all.sd,
+LG.f2.6.0.5.29.ord.all.sd,
+LG.f2.6.0.5.30.ord.all.sd,
+LG.f2.6.0.5.31.ord.all.sd)
+
+pdf("Map.6.0.5.ord.safe.sd.pdf")
+draw_map(Map.6.0.5.ord.safe.sd, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
+
+pdf("Map.6.0.5.ord.all.sd.pdf")
+draw_map(Map.6.0.5.ord.all.sd, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
+
+```
