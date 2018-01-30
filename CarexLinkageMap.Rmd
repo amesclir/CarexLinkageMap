@@ -2080,7 +2080,7 @@ dev.off()
 ```
 
 
-Linage group 2 has more of 50 cM between the majority of the markers and 13 at the end
+Linage group 17 has more of 50 cM between the majority of the markers and 1 at the end
 
 ```{r}
 
