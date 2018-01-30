@@ -2180,9 +2180,7 @@ dev.off()
 
 Finally, the linkage group 25 have over 40 cM between the majority of the markers and the last one
 
-
 ```{r}
-
 LG.f2.6.0.5.25.ord.safe2 <- LG.f2.6.0.5.25.ord.safe
 LG.f2.6.0.5.25.ord.safe2$seq.num <- LG.f2.6.0.5.25.ord.safe$seq.num[1:19]
 LG.f2.6.0.5.25.ord.safe2$seq.rf <- LG.f2.6.0.5.25.ord.safe$seq.rf[1:18]
@@ -2224,3 +2222,83 @@ LG.f2.6.0.5.31.ord.safe,
 LG.f2.6.0.5.32.ord.safe)
 
 draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
+
+
+
+
+
+
+
+```
+
+We are going to improve LG2 by adding markers under segregation distortion, one by one
+
+```{r}
+
+
+set_map_fun(type="kosambi")
+
+LG.f2.6.0.5.2.sd3 <- make_seq(LGs.f2.6.0.5.sd2, 2)
+
+LG.f2.6.0.5.2.ord.sd3 <- order_seq(LG.f2.6.0.5.2.sd3, n.init=5, subset.search = "twopt", twopt.alg = "rcd", THRES = 3)
+
+#151   M4741 61.30508       7  151 B1 LG2
+#420  M13558 40.21591       8  420 B2 LG6
+#916  M29986 14.72571       9  916 B3 LG2
+#1145 M36782 14.59091       8 1145 B3 LG2
+#1205 M38604 15.01282      28 1205 B3 LG2
+#1353 M43468 14.89286      16 1353 B3 LG2
+#1422 M45603 26.58170      31 1422 B3 LG2
+
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,"safe")
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 151)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,3)
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 916)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,22)
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 1145)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,27)
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 1205)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,29)
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 1353)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,23)
+LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 1422)
+LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,5)
+
+Map.6.0.5.ord.safe5 <- list(
+LG.f2.6.0.5.1.ord.safe, 
+LG.f2.6.0.5.2.ord.sd3, 
+LG.f2.6.0.5.3.ord.safe, 
+LG.f2.6.0.5.4.ord.safe, 
+LG.f2.6.0.5.5.ord.safe, 
+LG.f2.6.0.5.6.ord.safe, 
+LG.f2.6.0.5.7.ord.safe, 
+LG.f2.6.0.5.8.ord.safe, 
+LG.f2.6.0.5.9.ord.safe, 
+LG.f2.6.0.5.10.ord.safe,
+LG.f2.6.0.5.11.ord.safe,
+LG.f2.6.0.5.12.ord.safe,
+LG.f2.6.0.5.13.ord.safe,
+LG.f2.6.0.5.14.ord.safe,
+LG.f2.6.0.5.15.ord.safe,
+LG.f2.6.0.5.16.ord.safe,
+LG.f2.6.0.5.17.ord.safe,
+LG.f2.6.0.5.18.ord.safe,
+LG.f2.6.0.5.19.ord.safe,
+LG.f2.6.0.5.20.ord.safe,
+LG.f2.6.0.5.21.ord.safe,
+LG.f2.6.0.5.22.ord.safe,
+LG.f2.6.0.5.23.ord.safe,
+LG.f2.6.0.5.24.ord.safe2,
+LG.f2.6.0.5.25.ord.safe2,
+LG.f2.6.0.5.26.ord.safe,
+LG.f2.6.0.5.27.ord.safe,
+LG.f2.6.0.5.28.ord.safe,
+LG.f2.6.0.5.29.ord.safe,
+LG.f2.6.0.5.30.ord.safe,
+LG.f2.6.0.5.31.ord.safe,
+LG.f2.6.0.5.32.ord.safe)
+
+draw_map(Map.6.0.5.ord.safe5, names= TRUE, grid=TRUE, cex.mrk=0.3)
+
+#HASTA AQUI
+#FALTA REEDITAR EL LG2 Y YA!
