@@ -2178,59 +2178,6 @@ draw_map(Map.6.0.5.ord.safe5.sd2, names= TRUE, grid=TRUE, cex.mrk=0.3)
 dev.off()
 ```
 
-Finally, the linkage group 25 have over 40 cM between the majority of the markers and the last one
-
-```{r}
-LG.f2.6.0.5.25.ord.safe2 <- LG.f2.6.0.5.25.ord.safe
-LG.f2.6.0.5.25.ord.safe2$seq.num <- LG.f2.6.0.5.25.ord.safe$seq.num[1:19]
-LG.f2.6.0.5.25.ord.safe2$seq.rf <- LG.f2.6.0.5.25.ord.safe$seq.rf[1:18]
-LG.f2.6.0.5.25.ord.safe2$seq.phases <- LG.f2.6.0.5.25.ord.safe$seq.phases[1:18]
-LG.f2.6.0.5.25.ord.safe2
-
-Map.6.0.5.ord.safe4 <- list(
-LG.f2.6.0.5.1.ord.safe, 
-LG.f2.6.0.5.2.ord.safe2, 
-LG.f2.6.0.5.3.ord.safe, 
-LG.f2.6.0.5.4.ord.safe, 
-LG.f2.6.0.5.5.ord.safe, 
-LG.f2.6.0.5.6.ord.safe, 
-LG.f2.6.0.5.7.ord.safe, 
-LG.f2.6.0.5.8.ord.safe, 
-LG.f2.6.0.5.9.ord.safe, 
-LG.f2.6.0.5.10.ord.safe,
-LG.f2.6.0.5.11.ord.safe,
-LG.f2.6.0.5.12.ord.safe,
-LG.f2.6.0.5.13.ord.safe,
-LG.f2.6.0.5.14.ord.safe,
-LG.f2.6.0.5.15.ord.safe,
-LG.f2.6.0.5.16.ord.safe,
-LG.f2.6.0.5.17.ord.safe,
-LG.f2.6.0.5.18.ord.safe,
-LG.f2.6.0.5.19.ord.safe,
-LG.f2.6.0.5.20.ord.safe,
-LG.f2.6.0.5.21.ord.safe,
-LG.f2.6.0.5.22.ord.safe,
-LG.f2.6.0.5.23.ord.safe,
-LG.f2.6.0.5.24.ord.safe2,
-LG.f2.6.0.5.25.ord.safe2,
-LG.f2.6.0.5.26.ord.safe,
-LG.f2.6.0.5.27.ord.safe,
-LG.f2.6.0.5.28.ord.safe,
-LG.f2.6.0.5.29.ord.safe,
-LG.f2.6.0.5.30.ord.safe,
-LG.f2.6.0.5.31.ord.safe,
-LG.f2.6.0.5.32.ord.safe)
-
-draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
-
-
-
-
-
-
-
-```
-
 We are going to improve LG2 by adding markers under segregation distortion, one by one
 
 ```{r}
@@ -2264,41 +2211,98 @@ LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,23)
 LG.f2.6.0.5.2.ord.sd3 <- try_seq(LG.f2.6.0.5.2.ord.sd3, 1422)
 LG.f2.6.0.5.2.ord.sd3 <- make_seq(LG.f2.6.0.5.2.ord.sd3,5)
 
-Map.6.0.5.ord.safe5 <- list(
-LG.f2.6.0.5.1.ord.safe, 
+
+Map.6.0.5.ord.safe6.sd2 <- list(
+LG.f2.6.0.5.1.ord.safe.sd2, 
 LG.f2.6.0.5.2.ord.sd3, 
-LG.f2.6.0.5.3.ord.safe, 
-LG.f2.6.0.5.4.ord.safe, 
-LG.f2.6.0.5.5.ord.safe, 
-LG.f2.6.0.5.6.ord.safe, 
-LG.f2.6.0.5.7.ord.safe, 
-LG.f2.6.0.5.8.ord.safe, 
-LG.f2.6.0.5.9.ord.safe, 
-LG.f2.6.0.5.10.ord.safe,
-LG.f2.6.0.5.11.ord.safe,
-LG.f2.6.0.5.12.ord.safe,
-LG.f2.6.0.5.13.ord.safe,
-LG.f2.6.0.5.14.ord.safe,
-LG.f2.6.0.5.15.ord.safe,
-LG.f2.6.0.5.16.ord.safe,
-LG.f2.6.0.5.17.ord.safe,
-LG.f2.6.0.5.18.ord.safe,
-LG.f2.6.0.5.19.ord.safe,
-LG.f2.6.0.5.20.ord.safe,
-LG.f2.6.0.5.21.ord.safe,
-LG.f2.6.0.5.22.ord.safe,
-LG.f2.6.0.5.23.ord.safe,
-LG.f2.6.0.5.24.ord.safe2,
-LG.f2.6.0.5.25.ord.safe2,
-LG.f2.6.0.5.26.ord.safe,
-LG.f2.6.0.5.27.ord.safe,
-LG.f2.6.0.5.28.ord.safe,
-LG.f2.6.0.5.29.ord.safe,
-LG.f2.6.0.5.30.ord.safe,
-LG.f2.6.0.5.31.ord.safe,
-LG.f2.6.0.5.32.ord.safe)
+LG.f2.6.0.5.3.ord.safe.sd2, 
+LG.f2.6.0.5.4.ord.safe.sd2, 
+LG.f2.6.0.5.5.ord.safe.sd2, 
+LG.f2.6.0.5.6.ord.safe.sd2, 
+LG.f2.6.0.5.7.ord.safe.sd2, 
+LG.f2.6.0.5.8.ord.safe.sd2, 
+LG.f2.6.0.5.9.ord.safe.sd2, 
+LG.f2.6.0.5.10.ord.safe.sd2,
+LG.f2.6.0.5.11.ord.safe.sd2,
+LG.f2.6.0.5.12.ord.safe.sd2,
+LG.f2.6.0.5.13.ord.safe.sd2,
+LG.f2.6.0.5.14.ord.safe.sd2,
+LG.f2.6.0.5.15.ord.safe.sd2,
+LG.f2.6.0.5.16.ord.safe.sd2,
+LG.f2.6.0.5.17.ord.safe2.sd2,
+LG.f2.6.0.5.18.ord.safe.sd2,
+LG.f2.6.0.5.19.ord.safe.sd2,
+LG.f2.6.0.5.20.ord.safe.sd2,
+LG.f2.6.0.5.21.ord.safe.sd2,
+LG.f2.6.0.5.22.ord.safe.sd2,
+LG.f2.6.0.5.23.ord.safe.sd2,
+LG.f2.6.0.5.24.ord.safe2.sd2,
+LG.f2.6.0.5.25.ord.safe.sd2,
+LG.f2.6.0.5.26.ord.safe.sd2,
+LG.f2.6.0.5.27.ord.safe.sd2,
+LG.f2.6.0.5.28.ord.safe.sd2,
+LG.f2.6.0.5.29.ord.safe.sd2,
+LG.f2.6.0.5.30.ord.safe.sd2,
+LG.f2.6.0.5.31.ord.safe.sd2,
+LG.f2.6.0.5.32.ord.safe.sd2)
 
-draw_map(Map.6.0.5.ord.safe5, names= TRUE, grid=TRUE, cex.mrk=0.3)
+pdf("Map.6.0.5.ord.safe6.sd2.pdf")
+draw_map(Map.6.0.5.ord.safe6.sd2, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
 
-#HASTA AQUI
-#FALTA REEDITAR EL LG2 Y YA!
+
+
+
+```
+
+
+And some final arrangements in LG2
+
+```{r}
+LG.f2.6.0.5.2.ord.safe2.sd3 <- LG.f2.6.0.5.2.ord.sd3
+LG.f2.6.0.5.2.ord.safe2.sd3$seq.rf <- LG.f2.6.0.5.2.ord.sd3$seq.rf[-1]
+LG.f2.6.0.5.2.ord.safe2.sd3$seq.phases <- LG.f2.6.0.5.2.ord.sd3$seq.phases[-1]
+LG.f2.6.0.5.2.ord.safe2.sd3$seq.num <- LG.f2.6.0.5.2.ord.sd3$seq.num[-1]
+LG.f2.6.0.5.2.ord.safe2.sd3
+
+Map.6.0.5.ord.safe7.sd2 <- list(
+LG.f2.6.0.5.1.ord.safe.sd2, 
+LG.f2.6.0.5.2.ord.safe2.sd3, 
+LG.f2.6.0.5.3.ord.safe.sd2, 
+LG.f2.6.0.5.4.ord.safe.sd2, 
+LG.f2.6.0.5.5.ord.safe.sd2, 
+LG.f2.6.0.5.6.ord.safe.sd2, 
+LG.f2.6.0.5.7.ord.safe.sd2, 
+LG.f2.6.0.5.8.ord.safe.sd2, 
+LG.f2.6.0.5.9.ord.safe.sd2, 
+LG.f2.6.0.5.10.ord.safe.sd2,
+LG.f2.6.0.5.11.ord.safe.sd2,
+LG.f2.6.0.5.12.ord.safe.sd2,
+LG.f2.6.0.5.13.ord.safe.sd2,
+LG.f2.6.0.5.14.ord.safe.sd2,
+LG.f2.6.0.5.15.ord.safe.sd2,
+LG.f2.6.0.5.16.ord.safe.sd2,
+LG.f2.6.0.5.17.ord.safe2.sd2,
+LG.f2.6.0.5.18.ord.safe.sd2,
+LG.f2.6.0.5.19.ord.safe.sd2,
+LG.f2.6.0.5.20.ord.safe.sd2,
+LG.f2.6.0.5.21.ord.safe.sd2,
+LG.f2.6.0.5.22.ord.safe.sd2,
+LG.f2.6.0.5.23.ord.safe.sd2,
+LG.f2.6.0.5.24.ord.safe2.sd2,
+LG.f2.6.0.5.25.ord.safe.sd2,
+LG.f2.6.0.5.26.ord.safe.sd2,
+LG.f2.6.0.5.27.ord.safe.sd2,
+LG.f2.6.0.5.28.ord.safe.sd2,
+LG.f2.6.0.5.29.ord.safe.sd2,
+LG.f2.6.0.5.30.ord.safe.sd2,
+LG.f2.6.0.5.31.ord.safe.sd2,
+LG.f2.6.0.5.32.ord.safe.sd2)
+
+pdf("Map.6.0.5.ord.safe7.sd2.pdf")
+draw_map(Map.6.0.5.ord.safe7.sd2, names= TRUE, grid=TRUE, cex.mrk=0.3)
+dev.off()
+```
+
+
+Finished!
