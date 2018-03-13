@@ -27,7 +27,7 @@ LGs.f2.6.0.5
 Third, we get the genetic mapping of linkage groups
 
 ```{r}
-set.map.fun(type="kosambi")
+set_map_fun(type="kosambi")
 
 LG.f2.6.0.5.1 <- make_seq(LGs.f2.6.0.5, 1)
 LG.f2.6.0.5.2 <- make_seq(LGs.f2.6.0.5, 2)
@@ -293,7 +293,7 @@ LG.f2.6.0.5.30.ord.safe,
 LG.f2.6.0.5.31.ord.safe,
 LG.f2.6.0.5.32.ord.safe)
 
-draw.map(Map.6.0.5.ord.safe2, names= TRUE, grid=TRUE, cex.mrk=0.3)
+draw_map(Map.6.0.5.ord.safe2, names= TRUE, grid=TRUE, cex.mrk=0.3)
 
 ```
 
@@ -341,7 +341,7 @@ LG.f2.6.0.5.30.ord.safe,
 LG.f2.6.0.5.31.ord.safe,
 LG.f2.6.0.5.32.ord.safe)
 
-draw.map(Map.6.0.5.ord.safe3, names= TRUE, grid=TRUE, cex.mrk=0.3)
+draw_map(Map.6.0.5.ord.safe3, names= TRUE, grid=TRUE, cex.mrk=0.3)
 
 ```
 
@@ -390,7 +390,7 @@ LG.f2.6.0.5.30.ord.safe,
 LG.f2.6.0.5.31.ord.safe,
 LG.f2.6.0.5.32.ord.safe)
 
-draw.map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
+draw_map(Map.6.0.5.ord.safe4, names= TRUE, grid=TRUE, cex.mrk=0.3)
 
 ```
 
