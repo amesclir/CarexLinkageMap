@@ -2306,3 +2306,55 @@ dev.off()
 
 
 Finished!
+
+
+
+Now I am getting the best map for the Comparative genomics
+Basically, I am going to clean LG2 Map.6.0.5.ord.all and I will later add the LG4 from the map  Map.6.0.5.ord.all.sd
+
+```{r}
+LG.f2.6.0.5.2.ord.all2 <- LG.f2.6.0.5.2.ord.all
+LG.f2.6.0.5.2.ord.all2$seq.rf <- LG.f2.6.0.5.2.ord.all$seq.rf[-c(1:12)]
+LG.f2.6.0.5.2.ord.all2$seq.phases <- LG.f2.6.0.5.2.ord.all$seq.phases[-c(1:12)]
+LG.f2.6.0.5.2.ord.all2$seq.num <- LG.f2.6.0.5.2.ord.all$seq.num[-c(1:12)]
+LG.f2.6.0.5.2.ord.all2
+
+
+ <- list(
+LG.f2.6.0.5.1.ord.all, 
+LG.f2.6.0.5.2.ord.all2, 
+LG.f2.6.0.5.3.ord.all, 
+LG.f2.6.0.5.4.ord.all, 
+LG.f2.6.0.5.5.ord.all, 
+LG.f2.6.0.5.6.ord.all, 
+LG.f2.6.0.5.7.ord.all, 
+LG.f2.6.0.5.8.ord.all, 
+LG.f2.6.0.5.9.ord.all, 
+LG.f2.6.0.5.10.ord.all,
+LG.f2.6.0.5.11.ord.all,
+LG.f2.6.0.5.12.ord.all,
+LG.f2.6.0.5.13.ord.all,
+LG.f2.6.0.5.14.ord.all,
+LG.f2.6.0.5.15.ord.all,
+LG.f2.6.0.5.16.ord.all,
+LG.f2.6.0.5.17.ord.all,
+LG.f2.6.0.5.18.ord.all,
+LG.f2.6.0.5.19.ord.all,
+LG.f2.6.0.5.20.ord.all,
+LG.f2.6.0.5.21.ord.all,
+LG.f2.6.0.5.22.ord.all,
+LG.f2.6.0.5.23.ord.all,
+LG.f2.6.0.5.24.ord.all,
+LG.f2.6.0.5.25.ord.all,
+LG.f2.6.0.5.26.ord.all,
+LG.f2.6.0.5.27.ord.all,
+LG.f2.6.0.5.28.ord.all,
+LG.f2.6.0.5.29.ord.all,
+LG.f2.6.0.5.30.ord.all,
+LG.f2.6.0.5.31.ord.all,
+LG.f2.6.0.5.32.ord.all)
+
+write_map(Map.6.0.5.ord.all2, file = "Map.6.0.5.ord.all2.txt")
+
+```
+
